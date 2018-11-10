@@ -1,0 +1,36 @@
+<div class="container" id="order-manager-div">
+    <h3 class="text-center">{{ 'ideas.shop::lang.component.order_manager' | trans }}</h3>
+    <table class="table table-bordered">
+        <thead>
+           <th> {{ 'ideas.shop::lang.component.order_id' | trans }} </th>
+           <th> {{ 'ideas.shop::lang.component.date_buy' | trans }} </th>
+           <th> {{ 'ideas.shop::lang.component.product' | trans }} </th>
+           <th> {{ 'ideas.shop::lang.component.total' | trans }} </th>
+           <th> {{ 'ideas.shop::lang.component.status' | trans }} </th>
+        </thead>
+        <tbody>
+            {% for data in orderData %}
+            <tr>
+                <td>
+                    <a href="/order/detail/{{data.id}}">
+                    {{data.id | strPad}}
+                    </a>
+                </td>
+                <td>{{data.created_at}}</td>
+                <td>
+                {% for product in data.product%}
+                   - {{product.name}} <br/>
+                {% endfor %}
+                </td>
+                <td>{{data.total}}</td>
+                <td>{{data.orderStatus.name}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center">
+    {{ orderData.links | raw }}
+    </div>
+
+</div>

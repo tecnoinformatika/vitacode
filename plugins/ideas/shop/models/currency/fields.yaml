@@ -1,0 +1,29 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    code:
+        label: ideas.shop::lang.field.code
+        span: left
+        type: dropdown
+
+    symbol:
+        label: ideas.shop::lang.field.symbol
+        span: left
+
+    symbol_position:
+        label: ideas.shop::lang.field.symbol_position
+        span: left
+        type: dropdown
+        options:
+            0: ideas.shop::lang.field.before
+            1: ideas.shop::lang.field.after
+
+    value:
+        label: ideas.shop::lang.field.value
+        span: left
+        default: 1

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.ship
+
+# Model Form Field configuration
+form: $/ideas/shop/models/ship/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Ship
+
+# Default redirect location
+defaultRedirect: ideas/shop/ship
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/ship/update/:id
+    redirectClose: ideas/shop/ship
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/ship/update/:id
+    redirectClose: ideas/shop/ship
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

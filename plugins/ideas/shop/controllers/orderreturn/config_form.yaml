@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.orderreturn
+
+# Model Form Field configuration
+form: $/ideas/shop/models/orderreturn/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\OrderReturn
+
+# Default redirect location
+defaultRedirect: ideas/shop/orderreturn
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/orderreturn/update/:id
+    redirectClose: ideas/shop/orderreturn
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/orderreturn/update/:id
+    redirectClose: ideas/shop/orderreturn
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

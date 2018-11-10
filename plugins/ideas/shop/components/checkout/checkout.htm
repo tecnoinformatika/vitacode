@@ -1,0 +1,267 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<div class="category-top">
+    <img class="img-responsive" src="{{image_header_bottom | media}}" />
+</div>
+<div class="container" id="breadcrumb-div">
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="#">{{ 'ideas.shop::lang.component.home' | trans }}</a></li>
+            <li><a href="#">{{ 'ideas.shop::lang.component.checkout' | trans }}</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- keep ship money and coupon-reduce to calculate total final price-->
+<div id="ship-money" style="display: none">0</div>
+<div id="coupon-reduce" style="display: none">0</div>
+<!-- end keep ship money and coupon-reduce -->
+<div id="currency_code" style="display: none">{{currency_code}}</div>
+<input type="hidden" id="stripe_publish" value="{{stripe_publish}}" />
+<input type="hidden" id="coupon_id" value="0" />
+<input type="hidden" id="checkout_ok_url" value="{{checkout_ok_url}}" />
+<input type="hidden" id="checkout_fail_url" value="{{checkout_fail_url}}" />
+<input type="hidden" id="stripe_logo" value="/storage/app/media/theme/stripe.png" />
+
+<div class="container" id="checkout-div">
+    <div class="row">
+        {% flash %}
+        <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">{{ message }}</div>
+        {% endflash %}
+    </div>
+    {% if user%}
+        <input type="hidden" id="user_id" value="{{user.id}}" />
+    {% else %}
+        <input type="hidden" id="user_id" value="0" />
+    {% endif%}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="checkout-address-header">
+                Payment detail
+                <span id="login-modal">Login</span>
+            </div>
+            <div class="checkout-address-body">
+                <br/>
+                {% if user %}
+                    {% set classHidden = 'class-hidden'%}
+                    <input type="hidden" name="is_login" value="{{ const_is_login }}" />
+                    <input type="hidden" id="logged_in_email" value="{{user.email}}"/>
+                {% else %}
+                    <input type="hidden" name="is_login" value="{{ const_not_login }}" />
+                    {% set classHidden = ''%}
+                {% endif %}
+
+                {% if user %}
+                    Billing to address :
+                    {% set k = 0%}
+                    {% if userExtends is not empty %}
+                    {%for user in userExtends%}
+                    <div class="user-payment-outside">
+                        <input type="radio" name="user_address_billing" value="{{user.id}}"
+                               class="user_address_ship" {{k == 0 ? 'checked' : ''}}/>
+                        <div class="user-payment-checkbox">
+                            <div class="user-extend-data">
+                                <div class="user-address">{{user.address}}</div>
+                                <div class="user-email">{{user.email}}</div>
+                                <div class="user-phone">{{user.phone}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% set k = k + 1 %}
+                    {% endfor %}
+                    {% endif %}
+                    <button type="button" class="btn btn-info modal-add-user-address">
+                        {{ 'ideas.shop::lang.component.add_address' | trans }}
+                    </button>
+                    <div class="hr-class-30"></div>
+                    <input type="checkbox" name="use_same_address" id="use_same_address" value="0" checked/>
+                    {{ 'ideas.shop::lang.component.same_address' | trans }}
+                {% endif %}
+
+                {% set i = 0%}
+                {% if userExtends is not empty %}
+                <div id="div-address-shipping" class="{{classHidden}}">
+                    {%for user in userExtends%}
+                    <div class="user-payment-outside">
+                        <input type="radio" name="user_address_ship" value="{{user.id}}"
+                               class="user_address_ship" {{i == 0 ? 'checked' : ''}}/>
+                        <div class="user-payment-checkbox">
+                            <div class="user-extend-data">
+                                <div class="user-address">{{user.address}}</div>
+                                <div class="user-email">{{user.email}}</div>
+                                <div class="user-phone">{{user.phone}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% set i = i + 1 %}
+                    {% endfor %}
+                    <button type="button" class="btn btn-info modal-add-user-address">
+                        {{ 'ideas.shop::lang.component.add_address' | trans }}
+                    </button>
+                </div>
+                {% endif %}
+
+                {{ form_open({url : '', id : 'form-payment-not-login'}) }}
+                {% if user %}
+                    <input type="hidden" name="is_login" value="{{const_is_login}}" />
+                {% else %}
+                    <input type="hidden" name="is_login" value="{{const_not_login}}" />
+                {% endif %}
+                <div class="guest-billing-detail {{classHidden}}">
+                    <h3> <h3>{{ 'ideas.shop::lang.component.billing_detail' | trans }}</h3></h3>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span> {{ 'ideas.shop::lang.component.first_name' | trans }}</label>
+                        <input type="text" name="billing_first_name" id="billing_first_name" class="form-control pull-right checkout-address-input"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span> {{ 'ideas.shop::lang.component.last_name' | trans }}</label>
+                        <input type="text" name="billing_last_name" id="billing_last_name" class="form-control pull-right checkout-address-input" />
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span> {{ 'ideas.shop::lang.component.email' | trans }}</label>
+                        <input type="text" name="billing_email" id="billing_email" class="form-control pull-right checkout-address-input" />
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span> {{ 'ideas.shop::lang.component.phone' | trans }}</label>
+                        <input type="number" name="billing_phone" id="billing_phone" class="form-control pull-right checkout-address-input" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span> {{ 'ideas.shop::lang.component.address' | trans }}</label>
+                        <input type="text" name="billing_address" id="billing_address" class="form-control pull-right checkout-address-input"/>
+                    </div>
+                    <div class="hr-class-30"></div>
+                    <input type="checkbox" name="use_same_address_not_login" id="use_same_address_not_login" checked/>
+                    {{ 'ideas.shop::lang.component.same_address' | trans }}
+                </div>
+
+                <div class="guest-shipping-detail class-hidden" id="guest-shipping-detail">
+                    <h3>{{ 'ideas.shop::lang.component.shipping_detail' | trans }}</h3>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span>  {{ 'ideas.shop::lang.component.first_name' | trans }}</label>
+                        <input type="text" name="shipping_first_name" id="shipping_first_name" class="form-control pull-right checkout-address-input"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span>  {{ 'ideas.shop::lang.component.last_name' | trans }}</label>
+                        <input type="text" name="shipping_last_name" id="shipping_last_name"  class="form-control pull-right checkout-address-input" />
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span>  {{ 'ideas.shop::lang.component.email' | trans }}</label>
+                        <input type="text" name="shipping_email" id="shipping_email"  class="form-control pull-right checkout-address-input" />
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span>  {{ 'ideas.shop::lang.component.phone' | trans }}</label>
+                        <input type="text" name="shipping_phone"  id="shipping_phone" class="form-control pull-right checkout-address-input" />
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-address-label"><span class="required">*</span>  {{ 'ideas.shop::lang.component.address' | trans }}</label>
+                        <input type="text" name="shipping_address"  id="shipping_address" class="form-control pull-right checkout-address-input"/>
+                    </div>
+                </div>
+                {{ form_close() }}
+
+                <label for="payment_address_agree" class="control-label">
+                    <input type="hidden" name="payment_agree" value="0">
+                    <input type="checkbox" autocomplete="off" name="payment_agree" id="payment_agree"
+                           class="validate required" required="" value="1">
+                    <span title=""> {{ 'ideas.shop::lang.component.i_have_read_and_agree' | trans }} <a href="" class="agree"><b>{{ 'ideas.shop::lang.component.privacy_policy' | trans }} </b></a></span>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id="shipping-method">
+                <div class="checkout-address-header">
+                    {{ 'ideas.shop::lang.component.shipping_method' | trans }}
+                </div>
+                {% set k = 1 %}
+                {% for row in ship %}
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" name="shipping_rule"
+                                   class="shipping-method-type"
+                                   attr-id="{{row.id}}"
+                                   attr-type="{{row.type}}"
+                                   attr-price-above="{{row.above_price}}"
+                                   attr-cost="{{row.cost}}"
+                                   attr-weight-type="{{row.weight_type}}"
+                                   attr-weight-base="{{row.weight_based}}"
+                            {{k == 1 ? 'checked' : ''}}>
+                            <span class="text-grey">{{row.name}} {{ row.cost != 0 ? row.cost  | displayPriceAndCurrency : ''}}</span>
+                        </label>
+                    </div>
+                </div>
+                {% set k = k + 1 %}
+                {% endfor %}
+            </div>
+            <div id="coupon-div">
+                <div class="checkout-address-header">
+                    {{ 'ideas.shop::lang.component.enter_your_coupon_code' | trans }}
+                </div>
+                <br/>
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" name="coupon" id="coupon_code" class="form-control" placeholder="Coupon code"/>
+                    </div>
+                    <input class="btn btn-default btn-xs" value="Apply Coupon" id="apply-coupon"/>
+                </div>
+            </div>
+            <div id="payment-method">
+                <div class="checkout-address-header">
+                    {{ 'ideas.shop::lang.component.payment_method' | trans }}
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input type="radio" name="payment_method" value="1" checked>
+                            <span class="text-grey">{{ 'ideas.shop::lang.component.cod' | trans }}</span></label><br/>
+
+                        {% if paypal == enable %}
+                        <label><input type="radio" name="payment_method" value="2">
+                            <span class="text-grey">Paypal</span></label><br/>
+                        {% endif %}
+
+                        {% if stripe == enable %}
+                        <label><input type="radio" name="payment_method" value="3">
+                            <span class="text-grey">Stripe</span></label><br/>
+                        {% endif %}
+
+                        <!--<label><input type="radio" name="payment_method" value="4">-->
+                            <!--<span class="text-grey">Other</span></label><br/>-->
+                    </div>
+                </div>
+            </div>
+            <div id="payment-method">
+                <div class="checkout-address-header">
+                    {{ 'ideas.shop::lang.component.comment' | trans }}
+                </div>
+                <br/>
+                <div class="form-group">
+                    <textarea id="comment" class="form-control" name="comment"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6 table-responsive">
+            <div class="checkout-address-header">
+                Shopping cart
+            </div>
+            <div id="ajax-cart-checkout">
+
+            </div>
+            <label for="confirm_agree" class="control-label">
+                <input type="hidden" name="confirm" value="0">
+                <input type="checkbox" autocomplete="off" name="confirm" id="confirm_agree" class="validate required" required="" value="1">
+                <span title="">{{ 'ideas.shop::lang.component.i_have_read_and_agree' | trans }} <a href="" class="agree"><b>{{ 'ideas.shop::lang.component.term_and_condition' | trans }}</b></a></span>
+            </label>
+
+        </div>
+
+    </div>
+    <div class="row">
+         <button class="btn btn-primary pull-right" id="checkout-button">{{ 'ideas.shop::lang.component.checkout' | trans }}</button>
+    </div>
+
+</div>
+
+{% partial 'UserExtend::_modalAddress'%}
+{% partial 'Checkout::_paypal'%}

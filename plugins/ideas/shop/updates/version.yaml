@@ -1,0 +1,61 @@
+1.0.1:
+    - Initialize plugin.
+    - create_attribute_table.php
+    - create_product_table.php
+    - create_order_table.php
+    - create_tax_ship_table.php
+    - create_setting_table.php
+    - create_coupon_table.php
+    - shop_seeder.php
+1.0.2: fix bug when enable cache
+1.0.3: fix bug when uninstall plugin
+1.0.4: remove table config when uninstall plugin
+1.0.5: Add modal confirm cart
+1.0.6: Add component list of products of category
+1.0.7:
+    - Add field is_homepage to table category
+    - add_is_home_page_to_category.php
+    - is_home_page_to_category_seeder.php
+1.0.8: Fix bug checkout when user not login
+1.0.9:
+    - Remove function of city and post code
+    - remove_city_post_code.php
+1.1.1:
+    - Fix bug checkout currency stripe and close stripe
+    - Fix bug name of receiver's email
+    - Add invoice template
+    - add_config_checkout.php
+1.1.2:
+    - remove stripe email field when checkout
+    - Delete user address
+1.1.3: fix bug download product and change some code of order controller
+1.1.4: fix bug uninstall plugin undefined function down() in class removeCityPostCode
+1.1.5:
+    - seo homepage
+    - add_seo_homepage.php
+1.1.6: add some events in checkout page
+1.1.7: fix bug is_new and is_bestseller in product attribute
+1.1.8: fix bug category active state in menu bar
+1.1.9:
+    - Config number of bestseller, is_featured_product, is_new
+    - change function getThemeImagesBySlug()
+    - add_number_product.php
+1.2.0: Add event handle route ideas.shop.handle_slug
+1.2.1: fix bug filter in category page
+1.2.2: Add some translate text in component
+1.2.3: Fix bug lost weight attribute in featured product and related product
+1.2.4: Fix bug permission product
+1.2.5: Add order detail and invoice in user manager, and custom message of stripe
+1.2.6: Change view of order and config default in backend
+1.2.7:
+    - Add image resize, change component Theme views
+    - add_config_is_resize.php
+1.2.8:
+    - Create default type product, some change in frontend order, invoice
+    - add_config_default_product_type.php
+1.2.9:
+    - Add review point average
+    - add_field_review_point.php
+1.3.1: change price filter
+1.3.2: add config cache enable
+1.3.3: Separate component product

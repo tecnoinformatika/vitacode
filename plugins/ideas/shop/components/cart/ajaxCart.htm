@@ -1,0 +1,76 @@
+<div class="row table-responsive">
+    <table class="table" id="table-cart">
+        <thead>
+        <tr>
+            <th>{{ 'ideas.shop::lang.component.image' | trans }}</th>
+            <th>{{ 'ideas.shop::lang.component.product_name' | trans }}</th>
+            <th>{{ 'ideas.shop::lang.component.price' | trans }}</th>
+            <th>{{ 'ideas.shop::lang.component.qty' | trans }}</th>
+            <th>{{ 'ideas.shop::lang.component.total' | trans }}</th>
+            <th>{{ 'ideas.shop::lang.component.delete' | trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cartDetail %}
+        <tr class="cart-tr">
+            <td>
+                <a href="{{item.slug}}">
+                    <img class="cart-product-image" src="{{item.image | media}}" />
+                </a>
+            </td>
+            <td class="cart-product-name"><a href="{{item.slug}}">{{item.name}}</a></td>
+            <td>{{item.price | displayPriceAndCurrency}}</td>
+            <td>
+                <input type="number" name="qty" class="cart-qty"
+                       attr-qty="{{item.qty_origin}}"
+                       attr-qty-order="{{item.qty_order}}"
+                       attr-name="{{item.name}}"
+                       attr-image="{{item.featured_image}}"
+                       attr-price="{{item.price}}"
+                       attr-product-id="{{item.id}}" value="{{item.qty}}"/>
+            </td>
+            <td>$ {{item.total_price_per_item}}</td>
+            <td>
+                <i class="fa fa-trash-o cart-remove-item-detail" attr-product-id="{{item.id}}" aria-hidden="true"></i>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn btn-default pull-left">{{ 'ideas.shop::lang.component.continue_shopping' | trans }}</div>
+
+    </div>
+</div>
+<!-- COUPON -->
+<br/>
+<div class="row">
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-4" id="cart-total-div">
+        <div id="cart-total-title">
+            {{ 'ideas.shop::lang.component.cart_total' | trans }}
+        </div>
+        <div id="cart-total-sum">
+            <table>
+                <tbody>
+                <tr>
+                    <td>{{ 'ideas.shop::lang.component.sub_total' | trans }}</td>
+                    <td>{{totalPrice | displayPriceAndCurrency}}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'ideas.shop::lang.component.total' | trans }}</td>
+                    <td>{{totalPrice | displayPriceAndCurrency}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="/checkout" class="btn btn-primary">
+            {{ 'ideas.shop::lang.component.process_to_checkout' | trans }}
+        </a>
+    </div>
+</div>
+<div class="hr-class"></div>

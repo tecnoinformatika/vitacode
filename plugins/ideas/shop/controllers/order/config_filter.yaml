@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    created_at:
+        label: ideas.shop::lang.field.created_at
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
+
+    updated_at:
+        label: ideas.shop::lang.field.updated_at
+        type: daterange
+        conditions: updated_at >= ':after' AND updated_at <= ':before'

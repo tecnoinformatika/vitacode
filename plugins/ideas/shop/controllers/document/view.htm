@@ -1,0 +1,13 @@
+<h3><?php echo $document['name']; ?></h3>
+
+<?php echo $document['description']; ?>
+
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <span class="btn-text">
+            <a href="<?php echo Backend::url('ideas/shop/'.$controller) ?>">
+                <?php echo e(trans('backend::lang.form.cancel')) ?>
+            </a>
+        </span>
+    </div>
+</div>

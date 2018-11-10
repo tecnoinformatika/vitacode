@@ -1,0 +1,1 @@
+En la Ficha Vital, también se encuentra un botón que al ser pinchado te indica en un mapa en que parte te encuentras, mostrando también las coordenadas de tu ubicación exacta en caso de necesitar esa información para dar aviso.

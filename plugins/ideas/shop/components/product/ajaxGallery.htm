@@ -1,0 +1,14 @@
+<img class="xzoom" id="xzoom-big-image" src="{{featuredImage | media}}"
+     width="554" height="556" xoriginal="{{featuredImage | media}}">
+<br>
+<ul class="xzoom-thumbs" id="bxslider">
+    {% if gallery is not empty %}
+    {% for image in gallery %}
+    <li>
+        <a href="{{image | media}}">
+            <img class="xzoom" width="80" src="{{image | media}}">
+        </a>
+    </li>
+    {% endfor %}
+    {% endif%}
+</ul>

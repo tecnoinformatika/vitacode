@@ -1,0 +1,23 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    slug:
+        label: ideas.shop::lang.field.slug
+        span: left
+        preset: name
+
+    value:
+        label: ideas.shop::lang.field.value
+        span: left
+        type: textarea
+        size: small
+
+    is_default:
+        span: left
+        type: text
+        default: 2

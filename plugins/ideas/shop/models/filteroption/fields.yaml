@@ -1,0 +1,35 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    slug:
+        label: ideas.shop::lang.field.slug
+        span: left
+        preset: name
+
+    option_order:
+        label: ideas.shop::lang.field.option_order
+        span: left
+        default: 0
+
+    filter_id:
+        label: ideas.shop::lang.field.filter_id
+        span: left
+        type: dropdown
+
+    filter_type:
+        label: ideas.shop::lang.field.filter_type
+        span: left
+        type: dropdown
+
+    option_value:
+        label: ideas.shop::lang.field.option_value
+        span: left
+        default: '#000000'
+
+
+

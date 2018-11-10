@@ -1,0 +1,15 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    unit:
+        label: ideas.shop::lang.field.unit
+
+    value:
+        label: ideas.shop::lang.field.value

@@ -1,0 +1,29 @@
+<article class="row">  
+	<h2 class="section-title clearfix desktop-12">Los más vendidos!</h2>
+	    <div id="product-loop">
+            {% for product in featured %}
+             <div class="product-index desktop-4 tablet-half mobile-half">     
+                <div class="product-index-inner">
+        		    <a href="{{product.slug}}" title="Mad Gorilla">
+        		        {% if product.featured_image is empty %}
+        		         <img class="img1" src="{{ 'assets/images/no_image.jpeg' | theme }}" alt="vitacode"/>
+        		        {% else %}
+        				<img class="img1" src="{{ product.featured_image | media |noImage  }}" alt="vitacode" />
+        				{% endif %}
+        			</a>       
+        		</div> 
+        		<div class="product-info"> 
+                    <div class="product-info-inner">
+        				<a href="{{product.slug}}"> 
+        			        <h3>{{product.name}}</h3>
+        				</a>        
+                        <div class="price">
+        					<div class="prod-price"> {{product.price | displayPriceAndCurrency}}</div>
+        				</div>
+        			</div>
+                   
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</article>

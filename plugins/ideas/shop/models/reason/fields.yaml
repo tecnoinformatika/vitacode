@@ -1,0 +1,7 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left

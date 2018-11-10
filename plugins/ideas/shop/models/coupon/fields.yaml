@@ -1,0 +1,77 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    code:
+        label: ideas.shop::lang.field.code
+        span: right
+
+    type:
+        label: ideas.shop::lang.field.type
+        span: left
+        type: dropdown
+
+    total:
+        label: ideas.shop::lang.field.total
+        span: right
+        comment: ideas.shop::lang.comment.total
+
+    discount:
+        label: ideas.shop::lang.field.discount
+        span: left
+
+    start_date:
+        label: ideas.shop::lang.field.start_date
+        span: left
+        type: datepicker
+        mode: date
+
+    end_date:
+        label: ideas.shop::lang.field.end_date
+        span: right
+        type: datepicker
+        mode: date
+
+    num_uses:
+        label: ideas.shop::lang.field.num_uses
+        span: left
+        comment: ideas.shop::lang.comment.num_uses
+        default: 0
+
+    num_per_customer:
+        label: ideas.shop::lang.field.num_per_customer
+        span: right
+        comment: ideas.shop::lang.comment.num_per_customer
+        default: 0
+
+    _category:
+        label: ideas.shop::lang.field.category
+        span: left
+        comment: ideas.shop::lang.comment.apply_for_category
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/coupon/create/_category.htm
+
+    _product:
+        label: ideas.shop::lang.field.product
+        span: right
+        comment: ideas.shop::lang.comment.apply_for_product
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/coupon/create/_product.htm
+
+    status:
+        label: ideas.shop::lang.field.status
+        type: switch
+        span: left
+        default: 1
+
+    logged:
+        label: ideas.shop::lang.field.logged
+        type: switch
+        span: right
+        default: 1
+        comment: ideas.shop::lang.comment.logged

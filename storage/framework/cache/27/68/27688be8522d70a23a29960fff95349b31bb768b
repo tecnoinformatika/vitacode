@@ -1,0 +1,9 @@
+1539634802a:1:{s:16:"downloadable.htm";a:10:{s:8:"fileName";s:16:"downloadable.htm";s:7:"content";s:158:"title = "Downloadable product"
+url = "/download/:code?"
+layout = "default"
+is_hidden = 0
+
+[\Ideas\Shop\Components\Downloadable Downloadable]
+==
+
+page download";s:5:"mtime";i:1535642258;s:6:"markup";s:13:"page download";s:4:"code";N;s:5:"title";s:20:"Downloadable product";s:3:"url";s:16:"/download/:code?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:48:"\Ideas\Shop\Components\Downloadable Downloadable";a:0:{}}}

@@ -1,0 +1,20 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    author:
+         label: ideas.shop::lang.field.author
+         searchable: true
+
+    status:
+         label: ideas.shop::lang.field.status
+         type: partial
+         path: ~/plugins/ideas/shop/controllers/baseview/list/_status.htm
+
+    created_at:
+         label: ideas.shop::lang.field.created_at
+
+    updated_at:
+         label: ideas.shop::lang.field.updated_at

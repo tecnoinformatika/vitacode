@@ -1,0 +1,5 @@
+<?php
+    echo $record->status == 0 ?
+        '<span class="disable">'.e(trans('ideas.shop::lang.general.disable')).'</span>' :
+        '<span class="enable">'.e(trans('ideas.shop::lang.general.enable')).'</span>';
+?>

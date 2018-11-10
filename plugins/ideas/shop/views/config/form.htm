@@ -1,0 +1,74 @@
+{% if type == 'checkbox' %}
+<div class="form-group col-md-6 span-{{span}}">
+    <div class="label-custom-checkbox">{{label}}</div>
+    <div class="checkbox custom-checkbox">
+        <input type="radio" name="{{ name }}" class="filter-choose" id="checkbox_{{ name }}_1"
+              {{value == enable ? 'checked' : ''}} value="1" >
+        <label for="checkbox_{{ name }}_1">
+            {% if valueName1 is defined %}
+            {{ valueName1 }}
+            {% else %}
+            {{ 'ideas.shop::lang.general.enable' | trans }}
+            {% endif %}
+        </label>
+    </div>
+    <div class="checkbox custom-checkbox">
+        <input type="radio" name="{{ name }}" class="filter-choose" id="checkbox_{{ name }}_0"
+        {{value == disable ? 'checked' : ''}} value="0" >
+        <label for="checkbox_{{ name }}_0">
+            {% if valueName0 is defined %}
+            {{ valueName0 }}
+            {% else %}
+            {{ 'ideas.shop::lang.general.disable' | trans }}
+            {% endif %}
+        </label>
+    </div>
+    {% if help_block is defined %}
+    <p class="help-block">{{help_block}}</p>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if type == 'number' %}
+<div class="form-group col-md-6 span-{{span}}">
+    <label>{{label}}</label>
+    <input type="number" name="{{name}}" value="{{value ? value : default_value}}" id="{{id}}" class="{{ class }}"/>
+    {% if help_block is defined %}
+    <p class="help-block">{{help_block}}</p>
+    {% endif %}
+</div>
+{% endif%}
+
+{% if type == 'text' %}
+<div class="form-group col-md-6 span-{{span}}">
+    <label>{{label}}</label>
+    <input type="text" name="{{name}}" value="{{value ? value : default_value}}" id="{{id}}" class="{{ class }}"/>
+    {% if help_block is defined %}
+    <p class="help-block">{{help_block}}</p>
+    {% endif %}
+</div>
+{% endif%}
+
+{% if type == 'textarea' %}
+<div class="form-group col-md-6 span-{{span}}">
+    <label>{{label}}</label>
+    <textarea name="{{name}}" id="{{id}}" class="{{ class }}" rows="{{rows}}">{{value ? value : default_value}}</textarea>
+    {% if help_block is defined %}
+    <p class="help-block">{{help_block}}</p>
+    {% endif %}
+</div>
+{% endif%}
+
+{% if type == 'select' %}
+<div class="form-group col-md-6 span-{{span}}">
+    <label>{{label}}</label>
+    <select name="{{name}}" id="{{id}}" class="{{class}}">
+        {% for row in data %}
+        <option value="{{row.id}}" {{ row.id == value ? 'selected' : '' }}>{{row.name}}</option>
+        {% endfor%}
+    </select>
+    {% if help_block is defined %}
+    <p class="help-block">{{help_block}}</p>
+    {% endif %}
+</div>
+{% endif%}

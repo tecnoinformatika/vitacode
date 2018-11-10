@@ -1,0 +1,11 @@
+<div class="row" id="ship-return">
+    {% for image in ship_slide %}
+    <div class="col-md-4 text-center">
+        <div class="ship-return-image"><img src="{{image | media | noImage }}" /> </div>
+        <div class="ship-return-title">{{image.title}}</div>
+        <div class="ship-return-content">
+            {{image.description}}
+        </div>
+    </div>
+    {% endfor %}
+</div>

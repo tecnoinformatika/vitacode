@@ -1,0 +1,13 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    description:
+        label: ideas.shop::lang.field.description
+        span: left
+        type: textarea
+        size: large

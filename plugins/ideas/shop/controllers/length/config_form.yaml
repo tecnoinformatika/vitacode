@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.length
+
+# Model Form Field configuration
+form: $/ideas/shop/models/length/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Length
+
+# Default redirect location
+defaultRedirect: ideas/shop/length
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/length/update/:id
+    redirectClose: ideas/shop/length
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/length/update/:id
+    redirectClose: ideas/shop/length
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

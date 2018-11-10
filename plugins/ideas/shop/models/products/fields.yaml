@@ -1,0 +1,200 @@
+# ===================================
+#  Field Definitions
+# ===================================
+tabs:
+  fields:
+      product_type:
+          tab: ideas.shop::lang.product.product_tab_general
+          label:
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_product_type.htm
+
+      name:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.name
+          span: left
+          required: true
+
+      slug:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.slug
+          span: right
+          preset: name
+          cssClass: is-required
+          required: true
+
+      _category:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.category
+          span: left
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_category.htm
+          required: true
+
+      sku:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.sku
+          span: right
+
+      price:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.price
+          span: left
+          required: true
+
+      price_promotion:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.price_promotion
+          span: right
+          default: 0
+
+      tax_class_id:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.tax_class
+          span: left
+          type: dropdown
+
+      qty:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.qty_label_empty
+          span: right
+          default: 0
+
+      _link:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.link
+          span: right
+
+      _attribute[length_id]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.length_id
+          span: left
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_length.htm
+
+      _attribute[weight_id]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.weight_id
+          span: right
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_weight.htm
+
+      _attribute[length]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.length
+          span: left
+          cssClass: product-dimensions
+          default: 0
+
+      _attribute[width]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.width
+          span: left
+          cssClass: product-dimensions
+          default: 0
+
+      _attribute[height]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.height
+          span: left
+          cssClass: product-dimensions
+          default: 0
+
+      _attribute[weight]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.weight
+          span: right
+          cssClass: is-required
+          default: 0
+
+      status:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.status
+          span: left
+          type: switch
+          default: 1
+
+      featured_image:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.featured_image
+          span: right
+          type: mediafinder
+          mode: image
+
+      _attribute[is_homepage]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.is_homepage
+          type: switch
+          span: left
+
+      _attribute[is_featured_product]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.is_featured_product
+          type: switch
+          span: left
+
+      _attribute[is_new]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.is_new
+          type: switch
+          span: left
+
+      _attribute[is_bestseller]:
+          tab: ideas.shop::lang.product.product_tab_general
+          label: ideas.shop::lang.field.is_bestseller
+          type: switch
+          span: left
+
+      _attribute[short_intro]:
+          tab: ideas.shop::lang.product.product_tab_introduction
+          label: ideas.shop::lang.field.short_intro
+          type: textarea
+          size: small
+          span: left
+
+      _attribute[seo_title]:
+          tab: ideas.shop::lang.product.product_tab_introduction
+          label: ideas.shop::lang.field.seo_title
+          type: textarea
+          span: right
+          size: small
+
+      _attribute[full_intro]:
+          tab: ideas.shop::lang.product.product_tab_introduction
+          label: ideas.shop::lang.field.full_intro
+          type: richeditor
+          span: left
+          size: small
+
+      _attribute[seo_keyword]:
+          tab: ideas.shop::lang.product.product_tab_introduction
+          label: ideas.shop::lang.field.seo_keyword
+          type: textarea
+          span: right
+          size: small
+
+      _attribute[seo_description]:
+          tab: ideas.shop::lang.product.product_tab_introduction
+          label: ideas.shop::lang.field.seo_description
+          type: textarea
+          span: right
+          size: small
+
+      _filter:
+          tab: ideas.shop::lang.product.product_tab_filter
+          label:
+          span: left
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_filter.htm
+
+      _gallery:
+          tab: ideas.shop::lang.product.product_tab_gallery
+          label:
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_gallery.htm
+
+      _configurable:
+          tab: ideas.shop::lang.product.product_tab_configurable
+          label:
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/products/create/_configurable.htm

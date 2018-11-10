@@ -1,0 +1,79 @@
+<div class="container" id="order-manager-div">
+    <h3 class="text-center">{{ 'ideas.shop::lang.component.order_detail' | trans }}</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="order-product-title">
+                <div class="text-bold pull-left p-order-product-title">{{ 'ideas.shop::lang.order.order' | trans }}</div>
+            </div>
+            <table class="table-bordered table-order">
+                <thead>
+                <tr>
+                    <th>{{ 'ideas.shop::lang.order.billing_address' | trans }}</th>
+                    <th>{{ 'ideas.shop::lang.order.shipping_address' | trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ order.billing_name }}</td>
+                    <td>{{ order.shipping_name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ order.billing_address }}</td>
+                    <td>{{ order.shipping_address }}</td>
+                </tr>
+                <tr>
+                    <td>{{ order.billing_phone }}</td>
+                    <td>{{ order.shipping_phone }}</td>
+                </tr>
+                <tr>
+                    <td>{{ order.billing_email }}</td>
+                    <td>{{ order.shipping_email }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ 'ideas.shop::lang.order.shipping' | trans }} :
+                        {{ shipping_rule_name }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <div id="order-product-title">
+                <div class="text-bold pull-left p-order-product-title">{{ 'ideas.shop::lang.order.product' | trans }}</div>
+            </div>
+            <table class="table-bordered table-order">
+                <thead>
+                <tr>
+                    <th>{{ 'ideas.shop::lang.order.product' | trans }}</th>
+                    <th>{{ 'ideas.shop::lang.order.qty' | trans }}</th>
+                    <th>{{ 'ideas.shop::lang.order.price_after_tax' | trans }}</th>
+                    <th>{{ 'ideas.shop::lang.order.total' | trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in product %}
+                <tr>
+                    <td>
+                        {{ row.name }}
+                    </td>
+                    <td>{{ row.qty }}</td>
+                    <td>{{ row.price_after_tax | displayPriceAndCurrency }}</td>
+                    <td>{{ (row.qty * row.price_after_tax) | displayPriceAndCurrency }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3">{{ 'ideas.shop::lang.order.shipping_cost' | trans }}</td>
+                    <td>{{ order.shipping_cost | displayPriceAndCurrency }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">{{ 'ideas.shop::lang.order.total' | trans }}</td>
+                    <td>{{ order.total | displayPriceAndCurrency  }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="{{ urlPrintInvoice }}" id="btn-print-invoice" target="_blank">
+        {{ 'ideas.shop::lang.order.print_invoice' | trans }}
+    </a>
+</div>

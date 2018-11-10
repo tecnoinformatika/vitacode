@@ -1,0 +1,1 @@
+- override view of components in ../your_theme/partials/component_name/view_name.htm

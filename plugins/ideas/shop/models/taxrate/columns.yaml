@@ -1,0 +1,18 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    geo_zone_id:
+        label: ideas.shop::lang.field.geo_zone_id
+        relation: geo_zone_relation
+        select: name
+
+    type:
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/taxrate/_list_type.htm

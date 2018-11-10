@@ -1,0 +1,31 @@
+<!-- get config for coupon -->
+<?php
+  $couponPrefix = Ideas\Shop\Models\Config::getConfigByKey('coupon_prefix');
+  $couponLengthRandom = Ideas\Shop\Models\Config::getConfigByKey('coupon_length_random');
+  $couponPrefix == '' ? $prefix = 'shop' : $prefix = $couponPrefix;
+  $couponLengthRandom == '' ? $length = 8 : $length = $couponLengthRandom;
+?>
+
+<input type="hidden" id="coupon_prefix" value="<?php echo $prefix ?>" />
+<input type="hidden" id="coupon_length_random" value="<?php echo $length ?>" />
+
+<input type="hidden" id="admin_url" value="<?php echo \Backend::url('/'); ?>"/>
+        <?php
+        $id = $formModel->id;
+        $category = [];
+        $str = '';
+        if ($id != 0) {
+            $category = Ideas\Shop\Models\Coupon::getCategoryCoupon($id);
+            $str = Ideas\Shop\Models\Coupon::getIdOfProductOrCategory($category);
+        }
+        ?>
+<input type="hidden" id="category_update" value="<?php echo $str ?>" />
+<div class="form-group">
+    <select name="category[]" class="form-control select2" id="category-search" style="width:100%;" multiple="multiple">
+        <?php if (!empty($category)) { ?>
+        <?php foreach ($category as $row) { ?>
+            <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+        <?php } ?>
+        <?php } ?>
+    </select>
+</div>

@@ -1,0 +1,221 @@
+1539634803a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:5668:"[Category]
+id = 1
+maxItems = 4
+==
+<?php
+function onStart()
+{
+
+   $this['categorias'] = \Ideas\Shop\Models\Category::orderBy('created_at', 'desc')->get();
+}
+?>
+==
+<div id="top-header" >
+    <div class="container" >
+        <div class="row top-header-div">
+            <div class="col-md-3">Bienvenidos a {{ seo_title }}</div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                {% if user %}
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 25px; color: #fafafa; ">Hello {{ user.name }}
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/user/order" style="font-size: 25px; color: #e21515; ">{{ 'ideas.shop::lang.component.order_manager' | trans }} </a>
+                        </li>
+                        <li>
+                            <a href="/user/address" style="font-size: 25px; color: #e21515; ">{{ 'ideas.shop::lang.component.address_manager' | trans }}</a>
+                        </li>
+                        <li>
+                            <a href="/pin/public/" style="font-size: 25px; color: #e21515; ">Diligencia tu ficha</a>
+                        </li>
+                        <li>
+                            <a data-request="onLogout" data-request-data="redirect: '/'" style="font-size: 25px; color: #e21515; ">LOG OUT</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                {% else %}
+                <a href="/login" class="top-header-a">SIGN IN</a>
+                OR
+                <a href="/register" class="top-header-a">REGISTER</a>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row top-header-div">
+        <div id="logo" class="col-md-3"><img src="" /></div>
+        <div id="form-search" class="col-md-6">
+            <form action="/search-result" method="get" id="form-search-form">
+                <div class="form-group" id="search-form-top">
+                    <input type="text" id="search-input-top" name="key"
+                           class="form-control" placeholder="search"/>
+                    <i class="fa fa-search" aria-hidden="true" id="search-top-icon"></i>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3" id="support-phone-div">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span class="support-phone">123456789</span>
+        </div>
+    </div>
+</div>
+<div class="nav-wrapper" id="navbar">
+    <div class="navbar navbar-custom" role="navigation">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
+                <a href="{{ 'samples/eshop' | page }}" ><img src="{{'assets/images/logo-vitacode-400.png' | theme}}" ></a>
+            </div>
+            <!-- /Logo -->
+        
+            <!-- Navigation -->
+            <div class="navbar-collapse collapse">
+                <ul id="menu-header" class="nav navbar-nav navbar-left menu-header" style="padding-top: 30px;">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a title="Shop" href="/" style="color: #c13233;   font-size: 20px;">Home</a>
+                    </li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
+                        <a title="Categorías" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #c13233;   font-size: 20px;">Categorías <b class="fa fa-angle-down"></b></a>
+                        
+                        <ul role="menu" class=" dropdown-menu">
+                             
+                            {% for categoria in categorias %}
+                      
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                <a title="Categoria {{ categoria.name }} " href="/{{ categoria.slug }}" style="color: #c13233;   font-size: 20px;">{{ categoria.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a title="Blog" href="/blog-list" style="color: #c13233;   font-size: 25px;">Blog</a>
+                    </li>
+                     <ul class="nav navbar-nav navbar-right" >
+                            <li class="dropdown" id="cart-dropdown-li">
+                                <i class="fa fa-shopping-bag" aria-hidden="true" id="cart-top" style="color: black;   font-size: 25px;"></i>
+                                <span class="cart-count" id="cart-count">0</span>
+                                <div class="dropdown-menu" id="cart-dropdown">
+                                      {% component 'Cart::dropdown' %}
+                                </div>
+                            </li>
+                        </ul>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>";s:5:"mtime";i:1538138413;s:6:"markup";s:5502:"<div id="top-header" >
+    <div class="container" >
+        <div class="row top-header-div">
+            <div class="col-md-3">Bienvenidos a {{ seo_title }}</div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                {% if user %}
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 25px; color: #fafafa; ">Hello {{ user.name }}
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/user/order" style="font-size: 25px; color: #e21515; ">{{ 'ideas.shop::lang.component.order_manager' | trans }} </a>
+                        </li>
+                        <li>
+                            <a href="/user/address" style="font-size: 25px; color: #e21515; ">{{ 'ideas.shop::lang.component.address_manager' | trans }}</a>
+                        </li>
+                        <li>
+                            <a href="/pin/public/" style="font-size: 25px; color: #e21515; ">Diligencia tu ficha</a>
+                        </li>
+                        <li>
+                            <a data-request="onLogout" data-request-data="redirect: '/'" style="font-size: 25px; color: #e21515; ">LOG OUT</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                {% else %}
+                <a href="/login" class="top-header-a">SIGN IN</a>
+                OR
+                <a href="/register" class="top-header-a">REGISTER</a>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row top-header-div">
+        <div id="logo" class="col-md-3"><img src="" /></div>
+        <div id="form-search" class="col-md-6">
+            <form action="/search-result" method="get" id="form-search-form">
+                <div class="form-group" id="search-form-top">
+                    <input type="text" id="search-input-top" name="key"
+                           class="form-control" placeholder="search"/>
+                    <i class="fa fa-search" aria-hidden="true" id="search-top-icon"></i>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3" id="support-phone-div">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span class="support-phone">123456789</span>
+        </div>
+    </div>
+</div>
+<div class="nav-wrapper" id="navbar">
+    <div class="navbar navbar-custom" role="navigation">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
+                <a href="{{ 'samples/eshop' | page }}" ><img src="{{'assets/images/logo-vitacode-400.png' | theme}}" ></a>
+            </div>
+            <!-- /Logo -->
+        
+            <!-- Navigation -->
+            <div class="navbar-collapse collapse">
+                <ul id="menu-header" class="nav navbar-nav navbar-left menu-header" style="padding-top: 30px;">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a title="Shop" href="/" style="color: #c13233;   font-size: 20px;">Home</a>
+                    </li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
+                        <a title="Categorías" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #c13233;   font-size: 20px;">Categorías <b class="fa fa-angle-down"></b></a>
+                        
+                        <ul role="menu" class=" dropdown-menu">
+                             
+                            {% for categoria in categorias %}
+                      
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                <a title="Categoria {{ categoria.name }} " href="/{{ categoria.slug }}" style="color: #c13233;   font-size: 20px;">{{ categoria.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a title="Blog" href="/blog-list" style="color: #c13233;   font-size: 25px;">Blog</a>
+                    </li>
+                     <ul class="nav navbar-nav navbar-right" >
+                            <li class="dropdown" id="cart-dropdown-li">
+                                <i class="fa fa-shopping-bag" aria-hidden="true" id="cart-top" style="color: black;   font-size: 25px;"></i>
+                                <span class="cart-count" id="cart-count">0</span>
+                                <div class="dropdown-menu" id="cart-dropdown">
+                                      {% component 'Cart::dropdown' %}
+                                </div>
+                            </li>
+                        </ul>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>";s:4:"code";s:119:"function onStart()
+{
+
+   $this['categorias'] = \Ideas\Shop\Models\Category::orderBy('created_at', 'desc')->get();
+}";s:8:"Category";a:2:{s:2:"id";s:1:"1";s:8:"maxItems";s:1:"4";}}}

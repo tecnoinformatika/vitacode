@@ -1,0 +1,25 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    code:
+        label: ideas.shop::lang.field.code
+        searchable: true
+
+    discount:
+        label: ideas.shop::lang.field.discount
+        searchable: true
+
+    start_date:
+        label: ideas.shop::lang.field.start_date
+        searchable: true
+
+    end_date:
+        label: ideas.shop::lang.field.end_date
+        searchable: true

@@ -1,0 +1,21 @@
+1539634802a:1:{s:14:"checkoutOk.htm";a:9:{s:8:"fileName";s:14:"checkoutOk.htm";s:7:"content";s:332:"title = "Checkout ok"
+url = "/checkout-ok"
+layout = "default"
+
+[Ideas\Shop\Components\Checkout Checkout]
+==
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            Successful
+        </div>
+    </div>
+</div>
+<div id="stripe_success"><!-- to trigger event delete cart object sessionStorage --></div>";s:5:"mtime";i:1535642258;s:6:"markup";s:224:"<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            Successful
+        </div>
+    </div>
+</div>
+<div id="stripe_success"><!-- to trigger event delete cart object sessionStorage --></div>";s:4:"code";N;s:5:"title";s:11:"Checkout ok";s:3:"url";s:12:"/checkout-ok";s:6:"layout";s:7:"default";s:39:"Ideas\Shop\Components\Checkout Checkout";a:0:{}}}

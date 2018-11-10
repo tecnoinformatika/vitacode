@@ -1,0 +1,60 @@
+1541884164a:1:{s:10:"header.htm";a:6:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:988:"==
+<div id="header" class="row">	
+	        <div id="search" class="desktop-3 tablet-2 mobile-hide">
+	          <form action="https://blendwatches.com/search" method="get">
+	            <i class="fa fa-search"></i>
+	            <input type="text" name="q" id="q" class="search-field" placeholder="Buscar" />
+	          </form>
+	        </div>
+
+	        <div id="logo" class="desktop-6 tablet-2 mobile-3">
+	          
+	          <a href="index.html"><img src="{{ 'assets/img/logo-vitacode-400.png' | theme }}" alt="Vitacode" style="border: 0;"/></a>
+	          
+	        </div> 
+
+	        <ul id="cart" class="desktop-3 tablet-2 mobile-hide">
+	          
+
+	          
+	          <li>
+	            <a href="account/login.html">Mi cuenta</a>
+	          </li>
+	          
+	          
+	          
+	          <li>
+	            <a href="cart.html">Mi cesta: (<span class="cart-count">0</span>)</a>
+	          </li>
+	        </ul>   
+
+      </div>  <!-- End Header -->";s:5:"mtime";i:1539632037;s:6:"markup";s:985:"<div id="header" class="row">	
+	        <div id="search" class="desktop-3 tablet-2 mobile-hide">
+	          <form action="https://blendwatches.com/search" method="get">
+	            <i class="fa fa-search"></i>
+	            <input type="text" name="q" id="q" class="search-field" placeholder="Buscar" />
+	          </form>
+	        </div>
+
+	        <div id="logo" class="desktop-6 tablet-2 mobile-3">
+	          
+	          <a href="index.html"><img src="{{ 'assets/img/logo-vitacode-400.png' | theme }}" alt="Vitacode" style="border: 0;"/></a>
+	          
+	        </div> 
+
+	        <ul id="cart" class="desktop-3 tablet-2 mobile-hide">
+	          
+
+	          
+	          <li>
+	            <a href="account/login.html">Mi cuenta</a>
+	          </li>
+	          
+	          
+	          
+	          <li>
+	            <a href="cart.html">Mi cesta: (<span class="cart-count">0</span>)</a>
+	          </li>
+	        </ul>   
+
+      </div>  <!-- End Header -->";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

@@ -1,0 +1,8 @@
+1539634802a:1:{s:16:"generateCode.htm";a:9:{s:8:"fileName";s:16:"generateCode.htm";s:7:"content";s:181:"title = "Generate code to reset password"
+url = "/user/generate-code"
+layout = "default"
+
+[Ideas\Shop\Components\UserExtend UserExtend]
+==
+
+{% component 'UserExtend::generateCode'%}";s:5:"mtime";i:1535642258;s:6:"markup";s:41:"{% component 'UserExtend::generateCode'%}";s:4:"code";N;s:5:"title";s:31:"Generate code to reset password";s:3:"url";s:19:"/user/generate-code";s:6:"layout";s:7:"default";s:43:"Ideas\Shop\Components\UserExtend UserExtend";a:0:{}}}

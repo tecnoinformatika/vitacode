@@ -1,0 +1,71 @@
+1538710196a:1:{s:11:"default.htm";a:10:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:661:"[staticPage]
+[staticMenu mainMenu]
+code = "mainmenu"
+
+[localePicker]
+forceUrl = 1
+
+[snipcartDependencies]
+includeJquery = 1
+
+[currencyPicker]
+==
+<!doctype html>
+<html lang="{{ localePicker.activeLocale }}">
+<head>
+    {% partial 'meta' %}
+</head>
+<body>
+
+{% partial 'slideNav' %}
+
+<div class="site-wrapper">
+
+    {% partial 'topbar' %}
+    {% partial 'header' %}
+    {% partial 'navigation' %}
+
+    <main class="main">
+        <div class="wrapper">
+            <section class="content">
+                {% page %}
+            </section>
+        </div>
+    </main>
+
+    {% partial 'footer' %}
+</div>
+
+{% partial 'flash' %}
+{% partial 'scripts' %}
+</body>
+</html>";s:5:"mtime";i:1538709530;s:6:"markup";s:516:"<!doctype html>
+<html lang="{{ localePicker.activeLocale }}">
+<head>
+    {% partial 'meta' %}
+</head>
+<body>
+
+{% partial 'slideNav' %}
+
+<div class="site-wrapper">
+
+    {% partial 'topbar' %}
+    {% partial 'header' %}
+    {% partial 'navigation' %}
+
+    <main class="main">
+        <div class="wrapper">
+            <section class="content">
+                {% page %}
+            </section>
+        </div>
+    </main>
+
+    {% partial 'footer' %}
+</div>
+
+{% partial 'flash' %}
+{% partial 'scripts' %}
+</body>
+</html>";s:4:"code";N;s:10:"staticPage";a:0:{}s:19:"staticMenu mainMenu";a:1:{s:4:"code";s:8:"mainmenu";}s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"1";}s:20:"snipcartDependencies";a:1:{s:13:"includeJquery";s:1:"1";}s:14:"currencyPicker";a:0:{}}}

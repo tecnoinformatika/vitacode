@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.filteroption
+
+# Model Form Field configuration
+form: $/ideas/shop/models/filteroption/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\FilterOption
+
+# Default redirect location
+defaultRedirect: ideas/shop/filteroption
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/filteroption/update/:id
+    redirectClose: ideas/shop/filteroption
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/filteroption/update/:id
+    redirectClose: ideas/shop/filteroption
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

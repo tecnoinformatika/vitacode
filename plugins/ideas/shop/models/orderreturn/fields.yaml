@@ -1,0 +1,7 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    order_id:
+        label: ideas.shop::lang.field.order_id
+        span: left

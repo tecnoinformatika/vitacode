@@ -1,0 +1,13 @@
+<?php
+  $isResizeConfig = \Ideas\Shop\Models\Config::getConfigByKey('is_resize_image_product_list');
+  if ($isResizeConfig == \Ideas\Shop\Models\IdeasShop::ENABLE) {
+      if (!empty($record->featured_image)) {
+          $thumb = Ideas\Shop\Classes\ImageResize::resizeImage($record->featured_image);
+      } else {
+          $thumb = '';
+      }
+  } else {
+      $thumb = '/storage/app/media'.$record->featured_image;
+  }
+?>
+<img src="<?php echo $thumb ?>" style="max-height: 50px; max-width: 50px;"/>

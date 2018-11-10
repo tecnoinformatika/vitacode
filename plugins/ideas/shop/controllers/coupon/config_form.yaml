@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.coupon
+
+# Model Form Field configuration
+form: $/ideas/shop/models/coupon/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Coupon
+
+# Default redirect location
+defaultRedirect: ideas/shop/coupon
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/coupon/update/:id
+    redirectClose: ideas/shop/coupon
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/coupon/update/:id
+    redirectClose: ideas/shop/coupon
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

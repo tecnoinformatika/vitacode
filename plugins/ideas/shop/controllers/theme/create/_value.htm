@@ -1,0 +1,33 @@
+<input type="hidden" id="admin_url" value="<?php echo \Backend::url('/'); ?>"/>
+<br/>
+    <?php
+    $typeText = Ideas\Shop\Models\Theme::TYPE_TEXT;
+    $typeImage = Ideas\Shop\Models\Theme::TYPE_IMAGE;
+    $type = isset($formModel->type) ? $formModel->type : '';
+    $value = '';
+    $images = [];
+    if ($formModel->id != 0) {
+        $textValue = Ideas\Shop\Models\Theme::getThemeTextValue($formModel->id);
+        if ($type == $typeText) {
+            $value = $textValue->value;
+        }
+        $images = Ideas\Shop\Models\Theme::getThemeImage($formModel->id);
+    }
+    ?>
+
+    <textarea name="value" id="theme-text"
+              class="form-control theme_value"><?php echo $value ?></textarea>
+    <br/>
+
+    <!-- IMAGE -->
+    <div class="theme_value" id="theme-image">
+        <div class="btn btn-primary" id="add-image"><?php echo trans('ideas.shop::lang.general.add_image');?></div>
+        <ul id="theme-image-div">
+            <?php  if ($formModel->id != 0 && $type == $typeImage) { ?>
+            <?php echo $this->makePartial('plugins/ideas/shop/controllers/theme/addimage', ['images'=>$images]) ?>
+            <?php } ?>
+        </ul>
+    </div>
+    <!-- END IMAGE-->
+
+<br/>

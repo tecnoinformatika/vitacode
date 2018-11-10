@@ -1,0 +1,21 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    type:
+        label: ideas.shop::lang.field.type
+        span: left
+        type: dropdown
+
+    geo_zone_id:
+        label: ideas.shop::lang.field.geo_zone_id
+        span: left
+        type: dropdown
+
+    rate:
+        label: ideas.shop::lang.field.rate
+        span: left

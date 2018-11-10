@@ -1,0 +1,18 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    slug:
+        label: ideas.shop::lang.field.slug
+        searchable: true
+
+    filter_order:
+        label: ideas.shop::lang.field.filter_order
+        searchable: true
+

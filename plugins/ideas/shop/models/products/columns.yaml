@@ -1,0 +1,30 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: ideas.shop::lang.field.id
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    featured_image:
+        label: ideas.shop::lang.field.featured_image
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/baseview/list/_image.htm
+
+    status:
+        label: ideas.shop::lang.field.status
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/baseview/list/_status.htm
+
+    price:
+        label: ideas.shop::lang.field.price
+
+    product_type:
+        label: ideas.shop::lang.field.product_type
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/products/list/_product_type.htm

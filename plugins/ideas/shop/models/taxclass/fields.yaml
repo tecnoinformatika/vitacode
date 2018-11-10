@@ -1,0 +1,18 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    description:
+        label: ideas.shop::lang.field.description
+        span: left
+
+    tax_rate:
+          label:
+          span: left
+          type: partial
+          path: ~/plugins/ideas/shop/controllers/taxclass/_add_tax_rate.htm
+

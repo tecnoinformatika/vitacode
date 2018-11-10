@@ -1,0 +1,13 @@
+1539634802a:1:{s:12:"checkout.htm";a:11:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:242:"title = "Checkout"
+url = "/checkout"
+layout = "default"
+
+[Ideas\Shop\Components\Checkout Checkout]
+[Ideas\Shop\Components\UserExtend UserExtend]
+[Ideas\Shop\Components\AnotherPayment AnotherPayment]
+
+==
+
+{% component 'Checkout::checkout' %}
+
+";s:5:"mtime";i:1535642258;s:6:"markup";s:36:"{% component 'Checkout::checkout' %}";s:4:"code";N;s:5:"title";s:8:"Checkout";s:3:"url";s:9:"/checkout";s:6:"layout";s:7:"default";s:39:"Ideas\Shop\Components\Checkout Checkout";a:0:{}s:43:"Ideas\Shop\Components\UserExtend UserExtend";a:0:{}s:51:"Ideas\Shop\Components\AnotherPayment AnotherPayment";a:0:{}}}

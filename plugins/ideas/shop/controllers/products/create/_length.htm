@@ -1,0 +1,14 @@
+<?php
+$length = \Ideas\Shop\Models\Products::getAttributeLengthIdOptions();
+$attribute = \Ideas\Shop\Models\ProductToAttribute::getAttributeByProductId($formModel->id);
+!empty($attribute) ? $lengthId = $attribute->length_id : $lengthId = '';
+?>
+<select name="Products[_attribute][length_id]" class="form-control select2">
+<?php
+foreach ($length as $key => $value) {
+?>
+    <option value="<?php echo $key; ?>" <?php echo $lengthId == $key ? 'selected' : ''?> >
+    <?php echo $value; ?>
+    </option>
+<?php } ?>
+</select>

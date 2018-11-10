@@ -1,0 +1,32 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ~/plugins/ideas/shop/models/order/columns.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Order
+
+#number of per page
+recordsPerPage: 10
+
+#show checkboxes
+showCheckboxes: true
+
+# Link URL for each record
+recordUrl: ideas/shop/order/update/:id
+
+# Toolbar widget configuration
+toolbar:
+
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+# Filter widget configuration
+filter: config_filter.yaml
+

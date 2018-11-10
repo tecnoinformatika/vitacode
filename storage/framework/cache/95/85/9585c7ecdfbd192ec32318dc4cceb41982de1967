@@ -1,0 +1,15 @@
+1539634802a:1:{s:22:"forgotPasswordFail.htm";a:8:{s:8:"fileName";s:22:"forgotPasswordFail.htm";s:7:"content";s:175:"title = "Forgotten password fail"
+url = "/forgot-password-fail"
+layout = "default"
+
+==
+<div class="container">
+    <div class="row">
+        User not exists
+    </div>
+</div>
+";s:5:"mtime";i:1535642258;s:6:"markup";s:87:"<div class="container">
+    <div class="row">
+        User not exists
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:23:"Forgotten password fail";s:3:"url";s:21:"/forgot-password-fail";s:6:"layout";s:7:"default";}}

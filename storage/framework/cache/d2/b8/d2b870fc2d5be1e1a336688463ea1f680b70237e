@@ -1,0 +1,37 @@
+1539226524a:1:{s:18:"template/video.htm";a:5:{s:8:"fileName";s:18:"template/video.htm";s:7:"content";s:718:"<section id="video" class="parallax-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+                <h2>{{ this.theme.video_header }}</h2>
+                <h3>{{ this.theme.video_subheader }}</h3>
+                <p>{{ this.theme.video_content }}</p>
+            </div>
+
+            <div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{ this.theme.video_youtube }}" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1535642237;s:6:"markup";s:718:"<section id="video" class="parallax-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+                <h2>{{ this.theme.video_header }}</h2>
+                <h3>{{ this.theme.video_subheader }}</h3>
+                <p>{{ this.theme.video_content }}</p>
+            </div>
+
+            <div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{ this.theme.video_youtube }}" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>";s:4:"code";N;}}

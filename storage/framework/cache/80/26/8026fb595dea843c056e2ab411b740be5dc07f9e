@@ -1,0 +1,8 @@
+1539634802a:1:{s:18:"forgotPassword.htm";a:9:{s:8:"fileName";s:18:"forgotPassword.htm";s:7:"content";s:176:"title = "Forgotten your password?"
+url = "/forgot-password"
+layout = "default"
+
+[RainLab\User\Components\ResetPassword ResetPassword]
+
+==
+{% component 'ResetPassword::reset' %}";s:5:"mtime";i:1535642258;s:6:"markup";s:38:"{% component 'ResetPassword::reset' %}";s:4:"code";N;s:5:"title";s:24:"Forgotten your password?";s:3:"url";s:16:"/forgot-password";s:6:"layout";s:7:"default";s:51:"RainLab\User\Components\ResetPassword ResetPassword";a:0:{}}}

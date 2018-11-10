@@ -1,0 +1,104 @@
+1539634803a:1:{s:15:"site/footer.htm";a:6:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:2359:"==
+<footer class="container bg-negro gris pb-5">
+		<div class="row" style="margin-left: 25px;">
+			<div class="col-md-4 offset-md-1 col-xs-12">
+				<img src="{{ 'assets/images/logo-vitacode-250.png' | theme }}" class="img-fluid">
+				<p class="small blanco mt-4">Con el apoyo de:</p>
+				<a href="https://www.asech.cl/" target="_BLANK"><img src="{{ 'assets/images/asech.png' | theme }}" class="img-fluid mb-4" style="max-width: 180px;"></a>
+				<br>
+				<a href="quienes.html">¿Quiénes somos?</a><br>
+				<a href="{{ 'content/TERMINOS_Y_CONDICIONES_VITACODE.pdf' | theme }}" target="_BLANK">Términos y condiciones</a><br>
+				<a href="faq.html">Preguntas frecuentes</a><br>	
+			</div>
+			<div class="col-md-3 col-xs-12 pt-5" >
+				<div class="row mb-3" style="display: flex;">
+					<div class="col-1" style="flex: 0 0 8.333333%;    max-width: 8.333333%;">
+						<i class="fa fa-map-marker rojo"></i>
+					</div>
+					<div class="col-10">
+						<a href="https://www.google.co.ve/maps/place/Brown+Nte+100,+%C3%91u%C3%B1oa,+Regi%C3%B3n+Metropolitana,+Chile/@-33.4540772,-70.5941005,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cfb934f4e3a9:0xc27857d432d880e4!8m2!3d-33.4540772!4d-70.5919118" target="_BLANK">
+							Brown Norte número 100,<br>
+						Comuna de Ñuñoa, Santiago, Chile.</a>
+					</div>
+				</div>
+				<div class="row mb-3" style="display: flex;">
+					<div class="col-1" style="flex: 0 0 8.333333%;    max-width: 8.333333%;">
+						<i class="fa fa-phone rojo"></i>
+					</div>
+					<div class="col-10">
+						<a href="tel:+56225129465">(56 2) 2512 9465</a><br>
+						<a href="tel:+56956712201">(56 9) 5671 2201</a>
+					</div>
+				</div>
+				<div class="row mb-3" style="display: flex;">
+					<div class="col-1" style="flex: 0 0 8.333333%;    max-width: 8.333333%;">
+						<i class="fa fa-envelope rojo"></i>
+					</div>
+					<div class="col-10">
+						<a href="mailto:contacto@vitacode.cl">contacto@vitacode.cl</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-xs-12 align-self-end text-right social-icons" style="text-align: center;">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+
+			</div>
+		</div>
+			<br>
+	<br>
+	</footer>";s:5:"mtime";i:1535662525;s:6:"markup";s:2356:"<footer class="container bg-negro gris pb-5">
+		<div class="row" style="margin-left: 25px;">
+			<div class="col-md-4 offset-md-1 col-xs-12">
+				<img src="{{ 'assets/images/logo-vitacode-250.png' | theme }}" class="img-fluid">
+				<p class="small blanco mt-4">Con el apoyo de:</p>
+				<a href="https://www.asech.cl/" target="_BLANK"><img src="{{ 'assets/images/asech.png' | theme }}" class="img-fluid mb-4" style="max-width: 180px;"></a>
+				<br>
+				<a href="quienes.html">¿Quiénes somos?</a><br>
+				<a href="{{ 'content/TERMINOS_Y_CONDICIONES_VITACODE.pdf' | theme }}" target="_BLANK">Términos y condiciones</a><br>
+				<a href="faq.html">Preguntas frecuentes</a><br>	
+			</div>
+			<div class="col-md-3 col-xs-12 pt-5" >
+				<div class="row mb-3" style="display: flex;">
+					<div class="col-1" style="flex: 0 0 8.333333%;    max-width: 8.333333%;">
+						<i class="fa fa-map-marker rojo"></i>
+					</div>
+					<div class="col-10">
+						<a href="https://www.google.co.ve/maps/place/Brown+Nte+100,+%C3%91u%C3%B1oa,+Regi%C3%B3n+Metropolitana,+Chile/@-33.4540772,-70.5941005,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cfb934f4e3a9:0xc27857d432d880e4!8m2!3d-33.4540772!4d-70.5919118" target="_BLANK">
+							Brown Norte número 100,<br>
+						Comuna de Ñuñoa, Santiago, Chile.</a>
+					</div>
+				</div>
+				<div class="row mb-3" style="display: flex;">
+					<div class="col-1" style="flex: 0 0 8.333333%;    max-width: 8.333333%;">
+						<i class="fa fa-phone rojo"></i>
+					</div>
+					<div class="col-10">
+						<a href="tel:+56225129465">(56 2) 2512 9465</a><br>
+						<a href="tel:+56956712201">(56 9) 5671 2201</a>
+					</div>
+				</div>
+				<div class="row mb-3" style="display: flex;">
+					<div class="col-1" style="flex: 0 0 8.333333%;    max-width: 8.333333%;">
+						<i class="fa fa-envelope rojo"></i>
+					</div>
+					<div class="col-10">
+						<a href="mailto:contacto@vitacode.cl">contacto@vitacode.cl</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-xs-12 align-self-end text-right social-icons" style="text-align: center;">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+
+			</div>
+		</div>
+			<br>
+	<br>
+	</footer>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

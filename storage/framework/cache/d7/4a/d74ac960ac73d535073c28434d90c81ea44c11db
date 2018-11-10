@@ -1,0 +1,28 @@
+1539634802a:1:{s:11:"product.htm";a:10:{s:8:"fileName";s:11:"product.htm";s:7:"content";s:541:"title = "list"
+url = "/:slug"
+layout = "default"
+is_hidden = 0
+
+[Ideas\Shop\Components\Product Product]
+==
+{% if (type == type_category) %}
+    {% component 'Product::category' %}
+    {% put scripts %}
+    <script type="text/javascript" src="/plugins/ideas/shop/assets/components/js/category.js"></script>
+    {% endput %}
+{% else %}
+    {% component 'Product::detail' %}
+    {% put scripts %}
+    <script type="text/javascript" src="/plugins/ideas/shop/assets/components/js/productDetail.js"></script>
+    {% endput %}
+{% endif %}";s:5:"mtime";i:1535692150;s:6:"markup";s:434:"{% if (type == type_category) %}
+    {% component 'Product::category' %}
+    {% put scripts %}
+    <script type="text/javascript" src="/plugins/ideas/shop/assets/components/js/category.js"></script>
+    {% endput %}
+{% else %}
+    {% component 'Product::detail' %}
+    {% put scripts %}
+    <script type="text/javascript" src="/plugins/ideas/shop/assets/components/js/productDetail.js"></script>
+    {% endput %}
+{% endif %}";s:4:"code";N;s:5:"title";s:4:"list";s:3:"url";s:6:"/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:37:"Ideas\Shop\Components\Product Product";a:0:{}}}

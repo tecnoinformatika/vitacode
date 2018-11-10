@@ -1,0 +1,9 @@
+1539634802a:1:{s:15:"userAddress.htm";a:10:{s:8:"fileName";s:15:"userAddress.htm";s:7:"content";s:197:"title = "Address manager"
+url = "/user/address"
+layout = "default"
+
+[Ideas\Shop\Components\UserExtend UserExtend]
+[RainLab\User\Components\Session Session]
+==
+
+{% component 'UserExtend::address' %}";s:5:"mtime";i:1535642258;s:6:"markup";s:37:"{% component 'UserExtend::address' %}";s:4:"code";N;s:5:"title";s:15:"Address manager";s:3:"url";s:13:"/user/address";s:6:"layout";s:7:"default";s:43:"Ideas\Shop\Components\UserExtend UserExtend";a:0:{}s:39:"RainLab\User\Components\Session Session";a:0:{}}}

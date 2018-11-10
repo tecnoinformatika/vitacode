@@ -1,0 +1,39 @@
+1539634803a:1:{s:25:"site/modalConfirmCart.htm";a:5:{s:8:"fileName";s:25:"site/modalConfirmCart.htm";s:7:"content";s:715:"<div id="modalConfirmCart" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <p> {{ 'ideas.shop::lang.msg.add_item_success' | trans }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    {{ 'ideas.shop::lang.msg.continue_shopping' | trans }}
+                </button>
+                <a href="/cart" class="btn btn-primary">
+                    {{ 'ideas.shop::lang.msg.go_to_cart' | trans }}
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>";s:5:"mtime";i:1535642258;s:6:"markup";s:715:"<div id="modalConfirmCart" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <p> {{ 'ideas.shop::lang.msg.add_item_success' | trans }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    {{ 'ideas.shop::lang.msg.continue_shopping' | trans }}
+                </button>
+                <a href="/cart" class="btn btn-primary">
+                    {{ 'ideas.shop::lang.msg.go_to_cart' | trans }}
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>";s:4:"code";N;}}

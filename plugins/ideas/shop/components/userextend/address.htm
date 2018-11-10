@@ -1,0 +1,36 @@
+{% flash %}
+<!--<div class="alert alert-{{ type == 'error' ? 'danger' : type }}">{{ message }}</div>-->
+<p data-control="flash-message" data-interval="3" class="success">
+    {{ message }}
+</p>
+{% endflash %}
+<div id="msg_delete_user" style="display: none">{{ 'ideas.shop::lang.component.delete_address_confirm' | trans }}</div>
+<div class="container">
+    <div class="row" id="user-address-row">
+        {% set i=1 %}
+        {%for user in userExtends%}
+        <div class="col-md-4 user-address-div">
+            <div class="user-extend-data">
+                <h3> {{ 'ideas.shop::lang.component.address' | trans }} {{i}}
+                    &nbsp;
+                    <i class="fa fa-pencil-square-o edit-user-address" attr-id="{{user.id}}"></i>
+                    &nbsp;
+                    <i class="fa fa-trash-o delete-user-address" attr-id="{{user.id}}"></i>
+                </h3>
+                <div class="user-address"> {{ 'ideas.shop::lang.component.address' | trans }} : {{user.address}}</div>
+                <div class="user-email">{{ 'ideas.shop::lang.component.email' | trans }} : {{user.email}}</div>
+                <div class="user-phone">{{ 'ideas.shop::lang.component.phone' | trans }} : {{user.phone}}</div>
+            </div>
+        </div>
+        {% set i = i + 1%}
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-info modal-add-user-address">
+                {{ 'ideas.shop::lang.component.add_address' | trans }}</button>
+        </div>
+    </div>
+</div>
+
+{% partial 'UserExtend::_modalAddress'%}

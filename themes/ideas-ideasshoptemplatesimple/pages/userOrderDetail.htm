@@ -1,0 +1,9 @@
+title = "Order detail"
+url = "/order/detail/:id"
+layout = "default"
+
+[Ideas\Shop\Components\UserOrderDetail UserOrderDetail]
+[RainLab\User\Components\Session Session]
+==
+
+{% component 'UserOrderDetail::orderDetail' %}

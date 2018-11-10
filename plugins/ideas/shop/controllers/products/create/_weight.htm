@@ -1,0 +1,14 @@
+<?php
+$weight = \Ideas\Shop\Models\Products::getAttributeWeightIdOptions();
+$attribute = \Ideas\Shop\Models\ProductToAttribute::getAttributeByProductId($formModel->id);
+!empty($attribute) ? $weightId = $attribute->weight_id : $weightId = '';
+?>
+<select name="Products[_attribute][weight_id]" class="form-control select2">
+<?php
+foreach ($weight as $key => $value) {
+?>
+    <option value="<?php echo $key; ?>" <?php echo $weightId == $key ? 'selected' : ''?> >
+    <?php echo $value; ?>
+    </option>
+<?php } ?>
+</select>

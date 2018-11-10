@@ -1,0 +1,22 @@
+<?php
+$taxRateArray = Ideas\Shop\Models\TaxRate::getTaxRateList();
+$taxRule = [];
+if (!empty($model->taxrule)) {
+   foreach ($model->taxrule as $row) {
+       $taxRule[] = $row->tax_rate_id;
+   }
+}
+?>
+<div class="form-group">
+    <label>Tax Rate</label>
+    <select name="tax_rate[]" id="tax-rate-select" class="form-control" multiple='multiple'>
+    <?php
+    foreach ($taxRateArray as $key => $value) {
+    ?>
+    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+    <?php } ?>
+    </select>
+</div>
+<?php if (!empty($taxRule)) { ?>
+<input type="hidden" id="tax_rule_update" value="<?php echo implode(',', $taxRule) ?>"/>
+<?php } ?>

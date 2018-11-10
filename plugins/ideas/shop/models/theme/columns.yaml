@@ -1,0 +1,15 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    slug:
+        label: ideas.shop::lang.field.slug
+
+    type:
+        label: ideas.shop::lang.field.type

@@ -1,0 +1,16 @@
+<div class="owl-carousel owl-theme">
+    {% for image in testimonials %}
+    <div class="item">
+         {{image.title}}
+        <div class="user-pic text-center">
+            <img src="{{ image | media | noImage  }}" />
+        </div>
+        <p class="user-comment text-center">
+            {{image.description}}
+        </p>
+        <div class="user-name text-center">
+            {{image.title}}
+        </div>
+    </div>
+    {% endfor %}
+</div>

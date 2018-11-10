@@ -1,0 +1,18 @@
+title = "list"
+url = "/:slug"
+layout = "default"
+is_hidden = 0
+
+[Ideas\Shop\Components\Product Product]
+==
+{% if (type == type_category) %}
+    {% component 'Product::category' %}
+    {% put scripts %}
+    <script type="text/javascript" src="/plugins/ideas/shop/assets/components/js/category.js"></script>
+    {% endput %}
+{% else %}
+    {% component 'Product::detail' %}
+    {% put scripts %}
+    <script type="text/javascript" src="/plugins/ideas/shop/assets/components/js/productDetail.js"></script>
+    {% endput %}
+{% endif %}

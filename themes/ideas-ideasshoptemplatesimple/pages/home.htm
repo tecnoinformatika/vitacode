@@ -1,0 +1,29 @@
+title = "Homepage"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[Ideas\Shop\Components\Theme Theme]
+==
+{% component 'Theme::gallery' %}
+<div class="container" style="margin-top:50px" id="content">
+    {% partial 'banner' %}
+    {% component 'Theme::featured' %}
+
+    {% if  category is not empty %}
+        {% for c in category %}
+            {% partial 'site/category' id=c.id maxItems=c.num_display  %}
+        {% endfor %}
+    {% endif %}
+</div>
+{% partial 'site/testimonials' %}
+
+<div class="container" style="background-color: #ececec;">
+    
+        <div class="hr-class"></div>
+    {% partial 'ship_slide' %}  
+    
+ 
+
+    
+</div>

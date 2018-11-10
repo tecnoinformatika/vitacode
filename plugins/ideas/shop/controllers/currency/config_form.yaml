@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.currency
+
+# Model Form Field configuration
+form: $/ideas/shop/models/currency/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Currency
+
+# Default redirect location
+defaultRedirect: ideas/shop/currency
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/currency/update/:id
+    redirectClose: ideas/shop/currency
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/currency/update/:id
+    redirectClose: ideas/shop/currency
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

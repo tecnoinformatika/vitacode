@@ -1,0 +1,17 @@
+1538710196a:1:{s:12:"category.htm";a:11:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:303:"title = "Category"
+url = "/category/:slug*"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[de] = "/kategorie/:slug*"
+
+[products]
+categoryFilter = "slug"
+categorySlug = "{{ :slug }}"
+productsPerPage = 9
+noProductsMessage = "No products found."
+sortOrder = "name asc"
+==
+{% component 'products' %}
+";s:5:"mtime";i:1538709530;s:6:"markup";s:26:"{% component 'products' %}";s:4:"code";N;s:5:"title";s:8:"Category";s:3:"url";s:16:"/category/:slug*";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"de";s:17:"/kategorie/:slug*";}}s:8:"products";a:5:{s:14:"categoryFilter";s:4:"slug";s:12:"categorySlug";s:11:"{{ :slug }}";s:15:"productsPerPage";s:1:"9";s:17:"noProductsMessage";s:18:"No products found.";s:9:"sortOrder";s:8:"name asc";}}}

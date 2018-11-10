@@ -1,0 +1,14 @@
+<button
+        class="btn btn-default oc-icon-edit-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onUpdateDocument"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', true)"
+        data-stripe-load-indicator>
+    <?php echo e(trans('ideas.shop::lang.action.update')) ?>
+</button>

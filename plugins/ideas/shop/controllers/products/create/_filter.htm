@@ -1,0 +1,24 @@
+<?php
+$filterOption = \Ideas\Shop\Facades\Product::getFilterOptionByProductTypeAndGet($formModel->id, get());
+$id = $formModel->id;
+$filterArray = [];
+if ($id != null) {
+$filterArray = \Ideas\Shop\Facades\Product::getFilterByProductId($id);
+}
+foreach ($filterOption as $row) {
+?>
+<div class="filter-div">
+    <div class="filter-name"><b><?php echo $row['info']['name'];?></b></div>
+    <?php foreach ($row['options'] as $o) { ?>
+    <div class="checkbox custom-checkbox checkbox-filter">
+        <input name="Products[_filter][]" value="<?php echo $o['id']; ?>"
+               type="checkbox"
+               id="checkbox<?php echo $o['id']; ?>" class="filter_check"
+               <?php echo in_array($o['id'], $filterArray) ? 'checked' : ''?> />
+        <label for="checkbox<?php echo $o['id']; ?>"><?php echo $o['name']; ?></label>
+    </div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+

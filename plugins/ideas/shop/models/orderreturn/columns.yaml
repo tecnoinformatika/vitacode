@@ -1,0 +1,27 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    order_id:
+        label: ideas.shop::lang.field.order_id
+        searchable: true
+
+    product_name:
+        label: ideas.shop::lang.field.product_name
+        searchable: true
+
+    qty_order:
+        label: ideas.shop::lang.field.qty_order
+
+    is_reverse_order_qty:
+        label: ideas.shop::lang.field.is_reverse_order_qty
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/orderreturn/list/_is_reverse.htm
+
+    created_at:
+        label: ideas.shop::lang.field.created_at
+
+    updated_at:
+        label: ideas.shop::lang.field.updated_at

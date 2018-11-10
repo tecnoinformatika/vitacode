@@ -1,0 +1,147 @@
+<div id="settings-div">
+    <div class="row">
+        <div class="col-md-3 menu-row">
+            <div class="header-menu">
+                <?php echo e(trans('ideas.shop::lang.shop.settings')) ?>
+            </div>
+            <div class="body-menu">
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/config/configdefault'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.shop.config_default')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/config/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.shop.config_plus')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/theme/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.theme')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/geo/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.geo_manager')) ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 menu-row">
+            <div class="header-menu">
+                <?php echo e(trans('ideas.shop::lang.shop.tax_ship')) ?>
+            </div>
+            <div class="body-menu">
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/currency/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.currency_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/taxrate/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.tax_rate_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/taxclass/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.tax_class_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/ship/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.shipping_method')) ?>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3 menu-row">
+            <div class="header-menu">
+                <?php echo e(trans('ideas.shop::lang.shop.attribute')) ?>
+            </div>
+            <div class="body-menu">
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/filter/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.filter_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/filteroption/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.filter_option_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/weight/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.weight_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/length/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.length_manager')) ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 menu-row">
+            <div class="header-menu">
+                <?php echo e(trans('ideas.shop::lang.shop.other')) ?>
+            </div>
+            <div class="body-menu">
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/coupon/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.coupon_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/review/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.review_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/orderreturn/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.order_return_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/reason/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.reason_manager')) ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 menu-row">
+            <div class="header-menu">
+                <?php echo e(trans('ideas.shop::lang.shop.document_and_cache_invoice')) ?>
+            </div>
+            <div class="body-menu">
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/order/template'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.invoice_template')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/document/index'); ?>">
+                        <?php echo e(trans('ideas.shop::lang.setting.document_manager')) ?>
+                    </a>
+                </div>
+                <div class="body-menu-li">
+                    <a href="<?php echo Backend::url('ideas/shop/config/clearcache'); ?>" class="btn btn-primary btn-xs">
+                        <?php echo e(trans('ideas.shop::lang.setting.clear_cache')) ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- create event to extend setting view -->
+    <?php echo $this->fireViewEvent('ideas.shop.product.extendSettingView') ?>
+
+</div>
+
+

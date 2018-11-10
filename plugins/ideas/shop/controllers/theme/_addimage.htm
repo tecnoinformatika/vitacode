@@ -1,0 +1,50 @@
+<?php
+$strIdOld = '';
+foreach ($images as $row) {
+    $idOldArray[] = $row->id;
+    $strIdOld = implode(',', $idOldArray);
+}
+?>
+        <input type="hidden" name="id_old_update" value="<?php echo $strIdOld ?>" />
+<?php
+$index = 1;
+foreach ($images as $row) { ?>
+<li class="row theme-image-item" attr-image-index="<?php echo $index; ?>" id="theme-image-item-<?php echo $index; ?>">
+    <input type="hidden" name="image_order[]" value="<?php echo $row->image_order ?>" class="image_order"/>
+    <input type="hidden" name="id_update[]" value="<?php echo $row->id ?>" />
+    <div class="col-md-3">
+        <div class="form-group">
+            <input type="text" class="form-control" name="name[]" value="<?php echo $row->name ?>" placeholder="<?php echo trans('ideas.shop::lang.field.name');?>"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="link[]" value="<?php echo $row->link ?>" placeholder="<?php echo trans('ideas.shop::lang.field.link');?>"/>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="image-finder">
+            <img src="<?php echo URL::to('/'); ?>/storage/app/media<?php echo $row->url; ?>" />
+        </div>
+        <input type="hidden" class="theme-image-index" id="theme-image-<?php echo $index; ?>" name="url[]" value="<?php echo $row->url; ?>"/>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <input type="text" class="form-control" name="title[]" value="<?php echo $row->title ?>"  placeholder="<?php echo trans('ideas.shop::lang.field.title');?>"/>
+        </div>
+        <div class="from-group">
+            <input type="text" class="form-control" name="alt[]" value="<?php echo $row->alt ?>"  placeholder="<?php echo trans('ideas.shop::lang.field.alt');?>"/>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <textarea name="description[]" class="form-control image-description-input"
+                      placeholder="<?php echo trans('ideas.shop::lang.field.description');?>"><?php echo $row->description ?></textarea>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <span class="oc-icon-trash image-trash"></span>
+    </div>
+</li>
+<?php
+$index++;
+}
+?>

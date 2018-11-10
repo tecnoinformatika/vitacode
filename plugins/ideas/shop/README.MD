@@ -1,0 +1,2 @@
+- Products (controllers) -> products (routes) -> Products.php (model)
+- Category (controllers) -> category (routes) -> Category.php (model)

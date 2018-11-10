@@ -1,0 +1,23 @@
+<a href="javascript:;" class="btn btn-primary pickmedia"  attr-div-gallery="gallery"
+        >Choose your images</a>
+        <br/>
+<ul id="gallery">
+    <?php
+    $gallery = $formModel->gallery;
+    $galleryArray = [];
+    if (!empty($gallery)) {
+    $galleryArray = explode(';', $gallery);
+    }
+    ?>
+
+    <?php if (!empty($galleryArray)) {?>
+    <?php foreach ($galleryArray as $row) {?>
+    <li class="image-outer"><input type="hidden" name="gallery[]" value="<?php echo $row; ?>">
+        <img class="image-inner" src="<?php echo URL::to('/'); ?>/storage/app/media/<?php echo $row; ?>">
+        <img class="img-delete" src="<?php echo URL::to('/'); ?>/plugins/ideas/shop/assets/img/x.png">
+        <div class="image-name"><?php echo $row; ?></div>
+    </li>
+    <?php } ?>
+    <?php } ?>
+</ul>
+

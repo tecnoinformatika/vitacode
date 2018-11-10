@@ -1,0 +1,25 @@
+<div class="row" >
+    <h2 class="text-center">Mejor vendidos</h2>
+    <div class="text-center">
+        <p>
+            Aca encontrarás los productos mas solicitados      </p>
+    </div>
+</div>
+<div class="row">
+    <div class="owl-carousel owl-theme" >
+        {% for product in is_bestseller %}
+        <div class="item" >
+            <div class="col-md-6 new-arrival-image" ><img class="img-responsive" src="{{ product.featured_image|media|noImage }}" /> 
+                 <div class="user-name text-center">
+                      <a  href="/{{ product.slug }}"><span >{{ product.name }}</span></a>
+                       <div class="text-center">
+                           
+                        </div>
+                </div>
+            </div>
+       
+        
+         </div>
+        {% endfor %}
+    </div>
+</div>

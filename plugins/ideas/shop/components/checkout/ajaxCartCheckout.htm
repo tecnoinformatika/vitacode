@@ -1,0 +1,60 @@
+<input type="hidden" id="symbol_position" value="{{symbol_position}}" />
+<input type="hidden" id="symbol_position_before" value="{{symbol_position_before}}" />
+<input type="hidden" id="symbol" value="{{symbol}}" />
+
+
+<div id="weight-total" style="display: none">{{weightTotal}}</div>
+<table id="table-cart-checkout" class="table">
+    <thead>
+    <tr>
+        <th>{{ 'ideas.shop::lang.component.image' | trans }}</th>
+        <th>{{ 'ideas.shop::lang.component.product_name' | trans }}</th>
+        <th>{{ 'ideas.shop::lang.component.price' | trans }}</th>
+        <th>{{ 'ideas.shop::lang.component.qty' | trans }}</th>
+        <th>{{ 'ideas.shop::lang.component.total' | trans }}</th>
+        <th>{{ 'ideas.shop::lang.component.delete' | trans }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in cartDetail %}
+    <tr>
+        <td>
+            <img class="cart-product-image-checkout" src="{{item.image | media}}">
+        </td>
+        <td class="cart-product-name">{{item.name}}</td>
+        <td>{{item.price  | displayPriceAndCurrency}}</td>
+        <td>
+            {{item.qty}}
+        </td>
+        <td>{{item.total_price_per_item  | displayPriceAndCurrency}}</td>
+        <td>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr class="tr-no-border tr-checkout-total">
+        <td colspan="3"></td>
+        <td class="checkout-address-label">{{ 'ideas.shop::lang.component.sub_total' | trans }}</td>
+        <td></td>
+        <td>{{totalPrice | displayPriceAndCurrency}}</td>
+    </tr>
+    <tr class="tr-no-border tr-checkout-total">
+        <td colspan="3"></td>
+        <td class="checkout-address-label">{{ 'ideas.shop::lang.component.shipping_cost' | trans }}</td>
+        <td></td>
+        <td id="shipping-cost"></td>
+    </tr>
+    <tr class="tr-no-border tr-checkout-total">
+        <td colspan="3"></td>
+        <td class="total-price">{{ 'ideas.shop::lang.component.total' | trans }}</td>
+        <td></td>
+        {% if symbol_position == symbol_position_before%}
+        <td class="total-price">{{symbol}} <span id="total-price-span">{{totalPrice}}</span></td>
+        {% else %}
+        <td class="total-price"><span id="total-price-span">{{totalPrice}}</span> {{symbol}}</td>
+        {% endif %}
+    </tr>
+    </tbody>
+</table>
+<input type="hidden" id="total-price-hidden" value="{{totalPrice}}" />
+<input type="hidden" id="qty-total-hidden" value="{{qtyTotal}}" />

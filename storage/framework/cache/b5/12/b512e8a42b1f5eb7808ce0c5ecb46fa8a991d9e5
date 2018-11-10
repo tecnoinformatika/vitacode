@@ -1,0 +1,50 @@
+1539634802a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:657:"title = "Homepage"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[Ideas\Shop\Components\Theme Theme]
+==
+{% component 'Theme::gallery' %}
+<div class="container" style="margin-top:50px" id="content">
+    {% partial 'banner' %}
+    {% component 'Theme::featured' %}
+
+    {% if  category is not empty %}
+        {% for c in category %}
+            {% partial 'site/category' id=c.id maxItems=c.num_display  %}
+        {% endfor %}
+    {% endif %}
+</div>
+{% partial 'site/testimonials' %}
+
+<div class="container" style="background-color: #ececec;">
+    
+        <div class="hr-class"></div>
+    {% partial 'ship_slide' %}  
+    
+ 
+
+    
+</div>";s:5:"mtime";i:1536465348;s:6:"markup";s:555:"{% component 'Theme::gallery' %}
+<div class="container" style="margin-top:50px" id="content">
+    {% partial 'banner' %}
+    {% component 'Theme::featured' %}
+
+    {% if  category is not empty %}
+        {% for c in category %}
+            {% partial 'site/category' id=c.id maxItems=c.num_display  %}
+        {% endfor %}
+    {% endif %}
+</div>
+{% partial 'site/testimonials' %}
+
+<div class="container" style="background-color: #ececec;">
+    
+        <div class="hr-class"></div>
+    {% partial 'ship_slide' %}  
+    
+ 
+
+    
+</div>";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:33:"Ideas\Shop\Components\Theme Theme";a:0:{}}}

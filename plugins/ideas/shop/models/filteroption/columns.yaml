@@ -1,0 +1,23 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    option_value:
+        label: ideas.shop::lang.field.option_value
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/filteroption/list/_value.htm
+
+    filter_id:
+        label: ideas.shop::lang.field.filter_id
+        relation: filter_relation
+        select: name
+
+    option_order:
+        label: ideas.shop::lang.field.option_order
+        searchable: true

@@ -1,0 +1,23 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    status:
+        label: ideas.shop::lang.field.status
+        type: switch
+        conditions:
+            - status <> '1'
+            - status = '1'
+
+    product_type:
+        label: ideas.shop::lang.field.product_type
+        type: group
+        conditions: product_type in (:filtered)
+        options:
+            1: Simple
+            2: Configurable
+            4: Downloadable
+
+

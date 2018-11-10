@@ -1,0 +1,21 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    value:
+        label: ideas.shop::lang.field.value
+
+    date_modified:
+        label: ideas.shop::lang.field.date_modified
+        searchable: true
+
+    symbol_position:
+        label: ideas.shop::lang.field.symbol_position
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/currency/list/_symbol_position.htm

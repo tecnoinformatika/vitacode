@@ -1,0 +1,6 @@
+plugin:
+    name: 'jesusortega.ids::lang.plugin.name'
+    description: 'jesusortega.ids::lang.plugin.description'
+    author: JesusOrtega
+    icon: oc-icon-bolt
+    homepage: ''

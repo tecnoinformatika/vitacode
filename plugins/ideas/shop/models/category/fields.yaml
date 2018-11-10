@@ -1,0 +1,64 @@
+# ===================================
+#  Field Definitions
+# ===================================
+tabs:
+    fields:
+        name:
+            tab: ideas.shop::lang.category.category_tab_create_1
+            label: ideas.shop::lang.field.name
+            span: left
+            cssClass: is-required
+
+        slug:
+            tab: ideas.shop::lang.category.category_tab_create_1
+            label: ideas.shop::lang.field.slug
+            span: left
+            preset: name
+
+        status:
+            tab: ideas.shop::lang.category.category_tab_create_1
+            label: ideas.shop::lang.field.status
+            type: switch
+            span: left
+            default: 1
+
+        is_homepage:
+            tab: ideas.shop::lang.category.category_tab_create_1
+            label: ideas.shop::lang.field.is_homepage
+            type: switch
+            span: left
+            default: 0
+
+        num_display:
+            tab: ideas.shop::lang.category.category_tab_create_1
+            label: ideas.shop::lang.field.num_display
+            span: left
+            preset: name
+            comment: ideas.shop::lang.comment.num_product_per_category
+
+        featured_image:
+            tab: ideas.shop::lang.category.category_tab_create_1
+            label: ideas.shop::lang.field.featured_image
+            type: mediafinder
+            mode: image
+
+        seo_title:
+            tab: ideas.shop::lang.category.category_tab_create_2
+            label: ideas.shop::lang.field.seo_title
+            type: textarea
+            span: left
+            size: small
+
+        seo_keyword:
+            tab: ideas.shop::lang.category.category_tab_create_2
+            label: ideas.shop::lang.field.seo_keyword
+            type: textarea
+            span: left
+            size: small
+
+        seo_description:
+            tab: ideas.shop::lang.category.category_tab_create_2
+            label: ideas.shop::lang.field.seo_description
+            type: textarea
+            span: left
+            size: small

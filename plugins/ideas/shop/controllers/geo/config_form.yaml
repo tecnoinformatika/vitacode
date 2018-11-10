@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.geo
+
+# Model Form Field configuration
+form: $/ideas/shop/models/geo/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Geo
+
+# Default redirect location
+defaultRedirect: ideas/shop/geo
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/geo/update/:id
+    redirectClose: ideas/shop/geo
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/geo/update/:id
+    redirectClose: ideas/shop/geo
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

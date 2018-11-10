@@ -1,0 +1,17 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    slug:
+        label: ideas.shop::lang.field.slug
+        span: left
+        preset: name
+
+    filter_order:
+        label: ideas.shop::lang.field.filter_order
+        span: left
+        default: 0

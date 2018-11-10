@@ -1,0 +1,49 @@
+{% if category is not empty%}
+<div class="row">
+    <h2 class="text-center">{{categoryName}}</h2>
+    <div class="text-center">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        </p>
+    </div>
+</div>
+{% endif %}
+
+<div class="row">
+    {% for product in category %}
+    <div class="col-md-3 product-div">
+        <div class="product-image text-center">
+            <a href="{{product.slug}}">
+                {% if product.featured_image is empty %}
+                <img src="{{ 'assets/images/no_image.jpeg' | theme }}" />
+                {% else %}
+                <img src="{{ product.featured_image | media |noImage  }}" />
+                {% endif %}
+            </a>
+        </div>
+        <div class="product-name text-center">
+            <a href="{{product.slug}}">
+                {{product.name}}
+            </a>
+        </div>
+        <div class="product-price text-center">
+            {{product.price | displayPriceAndCurrency}}
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary {{product.action_class}}"
+                    attr-qty="{{product.qty}}"
+                    attr-qty-order="{{product.qty_order}}"
+                    attr-name="{{product.name}}"
+                    attr-image="{{product.featured_image}}"
+                    attr-price="{{product.final_price}}"
+                    attr-product-id="{{product.id}}"
+                    attr-slug="{{product.slug}}"
+                    attr-weight="{{product.attribute.weight}}"
+                    attr-weight-id="{{product.attribute.weight_id}}"
+                    >
+                {{product.action_text}}
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+</div>

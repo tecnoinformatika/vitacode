@@ -1,0 +1,85 @@
+title = "Blog detail"
+url = "/post/:slug?"
+layout = "default"
+is_hidden = 0
+
+[\RainLab\Blog\Components\Post Post]
+==
+
+<div class="category-top">
+    <img class="img-responsive" src="{{image_header_bottom | media}}" />
+</div>
+<div class="container" id="breadcrumb-div">
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog detail</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" id="product-div">
+    <div class="row">
+        <div class="col-md-9" id="blog-list">
+            <div id="blog-list-row">
+                {% if post.featured_images.count %}
+                <div class="blog-image-big">
+                    <img class="img-responsive" src="{{post.featured_images.0.path}}" />
+                </div>
+                {% endif %}
+                <div class="blog-list-title">
+                    {{post.title}}
+                </div>
+                <div class="blog-list-under-title">
+                        <span class="blog-list-date">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            {{post.published_at}}
+                        </span>
+                        <span class="blog-list-author">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                            Admin
+                        </span>
+                        <span class="blog-list-tag">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            blog, post
+                        </span>
+                </div>
+                <div class="blog-list-short-intro">
+                    {{post.excerpt}}
+                    {{ post.content_html|raw }}
+                </div>
+                <div class="hr-class-30"></div>
+                <div class="leave-a-reply">
+                    LEAVE A REPLY
+                    <div class="text-required-field text-grey">
+                        Your email address will not be published. Required fields are marked *
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>NAME *</label>
+                                <input type="text" name="name" class="form-control"/>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>EMAIL *</label>
+                                <input type="text" name="email" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>WEBSITE</label>
+                            <input type="text" name="website" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>COMMENT</label>
+                            <textarea name="comment" class="form-control"></textarea>
+                        </div>
+                        <input type="submit" value="Send" class="btn btn-default"/>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            {% partial 'post/sidebar'%}
+        </div>
+    </div>
+</div>

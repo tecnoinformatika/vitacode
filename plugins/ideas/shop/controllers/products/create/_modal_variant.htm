@@ -1,0 +1,61 @@
+<!-- modal add variant -->
+<?php
+$filterOption = \Ideas\Shop\Facades\Product::getFilterOptionForVariant($formModel->id, get());
+?>
+<!-- Modal choose product type -->
+<div class="control-popup modal fade" id="modalAddVariant">
+    <div class="modal-dialog">
+        <?php echo Form::open(['class' => 'layout', 'id'=>'form-variant']) ?>
+        <div class="modal-content">
+            <input type="hidden" id="variant-index" value="" />
+            <div class="modal-body">
+                <?php foreach ($filterOption as $row) { ?>
+                <input type="hidden" class="filter-id" value="<?php echo $row['info']['id'] ?>" />
+                <div class="form-group filter-variant">
+                    <label><?php echo $row['info']['name'] ?></label>
+                    <br/>
+                    <select class="select2 form-control filter-option-config dynamic_required"
+                            name="filter_<?php echo $row['info']['id'] ?>">
+                        <option value=""><?php echo e(trans('ideas.shop::lang.general.select_filter')) ?></option>
+                        <?php foreach ($row['options'] as $o) { ?>
+                        <option value="<?php echo $o['id'] ?>"><?php echo $o['name'] ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <?php } ?>
+                <div class="form-group">
+                    <label><?php echo e(trans('ideas.shop::lang.field.qty')) ?></label>
+                    <input type="number" id="qty_variant" value="" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label><?php echo e(trans('ideas.shop::lang.field.price')) ?></label>
+                    <input type="number" id="price_variant" value="" class="form-control"/>
+                </div>
+                <!-- featured image for variant-->
+                <label><?php echo e(trans('ideas.shop::lang.field.featured_image')) ?></label>
+                <a href="javascript:void(0)" class="find-button" id="variant-featured-image" onclick="openMediaFinder(this, 'featured_image_variant')">
+                    <span class="find-button-icon oc-icon-image"></span>
+                </a>
+                <input type="hidden" id="featured_image_variant" value=""/>
+                <!-- end featured image for variant-->
+                <!-- GALLERY -->
+                <label><?php echo e(trans('ideas.shop::lang.field.gallery')) ?></label>
+                <br/>
+                <a href="javascript:void(0)" class="btn btn-primary pickmedia"
+                   id="button-add-image-gallery-variant" attr-div-gallery="gallery-variant">
+                    <?php echo e(trans('ideas.shop::lang.general.add_image')) ?>
+                </a>
+                <ul id="gallery-variant">
+
+                </ul>
+                <!-- END GALLERY -->
+                <input type="hidden" id="variant-id-update" value=""/>
+                <button class="btn btn-large btn-primary" type="button"
+                        id="button-save-variant" attr-action="" attr-variant-index="">
+                    Save
+                </button>
+            </div>
+        </div>
+        <?php echo Form::close() ?>
+    </div>
+</div>

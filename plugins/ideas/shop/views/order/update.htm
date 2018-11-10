@@ -1,0 +1,205 @@
+<div id="order-data" style="display: none">{{order | json_encode()}}</div>
+<div id="product-data" style="display: none">{{product | json_encode()}}</div>
+        
+<div class="row">
+    <div class="col-md-6">
+        <div id="order-product-title">
+            <div class="text-bold pull-left p-order-product-title">{{ 'ideas.shop::lang.order.order' | trans }} </div>
+            <a href="{{ invoiceUrl }} " id="btn-print-invoice" target="_blank">
+                {{ 'ideas.shop::lang.order.print_invoice' | trans }} 
+            </a>
+        </div>
+        <table class="table-bordered table-order">
+            <thead>
+            <tr>
+                <th>{{ 'ideas.shop::lang.order.billing_address' | trans }} </th>
+                <th>{{ 'ideas.shop::lang.order.shipping_address' | trans }} </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ order.billing_name }} </td>
+                <td>{{ order.shipping_name }} </td>
+            </tr>
+            <tr>
+                <td>{{ order.billing_address }} </td>
+                <td>{{ order.shipping_address }} </td>
+            </tr>
+            <tr>
+                <td>{{ order.billing_phone }} </td>
+                <td>{{ order.shipping_phone }} </td>
+            </tr>
+            <tr>
+                <td>{{ order.billing_email }} </td>
+                <td>{{ order.shipping_email }} </td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ 'ideas.shop::lang.order.shipping' | trans }}  :
+                    {{ order.shipping_rule_name }} </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <div id="order-product-title">
+            <div class="text-bold pull-left p-order-product-title">{{ 'ideas.shop::lang.order.product' | trans }} </div>
+            <div id="btn-return-product">{{ 'ideas.shop::lang.order.return_order' | trans }} </div>
+        </div>
+        <table class="table-bordered table-order">
+            <thead>
+            <tr>
+                <th>{{ 'ideas.shop::lang.order.product' | trans }} </th>
+                <th>{{ 'ideas.shop::lang.order.qty' | trans }} </th>
+                <th>{{ 'ideas.shop::lang.order.price_after_tax' | trans }} </th>
+                <th>{{ 'ideas.shop::lang.order.total' | trans }} </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in product %}
+            <tr>
+                <td>
+                    {{ row.name }}
+                    {% if (row.product.product_type == product_type_downloadable) %}
+                    <div id="send-download-link" class="btn-download-link"
+                         attr-email="{{ order.shipping_email }} "
+                         attr-product-id="{{ row.product_id }} "
+                         attr-link="{{ row.download.link }}">Send link</div>
+                    {% endif %}
+                </td>
+                <td>{{ row.qty }} </td>
+                <td>{{ row.price_after_tax |  displayPriceAndCurrency }}</td>
+                {% set finalPrice = row.qty * row.price_after_tax %}
+                <td>{{ finalPrice |  displayPriceAndCurrency }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="3">{{ 'ideas.shop::lang.order.shipping_cost' | trans }} </td>
+                <td>{{ order.shipping_cost |  displayPriceAndCurrency }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{ 'ideas.shop::lang.order.total' | trans }} </td>
+                <td>{{ order.total |  displayPriceAndCurrency }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br/>
+<div class="row" id="order-status-change-div">
+    <div class="col-md-6">
+        <p class="text-bold">{{ 'ideas.shop::lang.order.order_payment_status' | trans }} </p>
+        {%  if (order.payment_status == payment_status_not_paid) %}
+        <div class="btn-not-paid" attr-order-id="{{ order.id }} " attr-status-change="{{ paid }}">
+            {{ 'ideas.shop::lang.order.not_paid' | trans }} 
+        </div>
+        {% else %}
+        <div class="btn-paid" attr-order-id="{{ order.id }} " attr-status-change="{{ notPaid }}">
+            {{ 'ideas.shop::lang.order.paid' | trans }} 
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p class="text-bold">{{ 'ideas.shop::lang.order.comment' | trans }} </p>
+        <p>{{ order.comment }} </p>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p class="text-bold">{{ 'ideas.shop::lang.order.order_status_change' | trans }} </p>
+        <table class="table-bordered table-order">
+            <thead>
+            <tr>
+                <th>{{ 'ideas.shop::lang.order.created_at' | trans }} </th>
+                <th>{{ 'ideas.shop::lang.order.comment' | trans }} </th>
+                <th>{{ 'ideas.shop::lang.order.status' | trans }} </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in orderStatusConvert %}
+            <tr>
+                <td>{{ row.created_at }} </td>
+                <td>{{ row.comment }} </td>
+                <td>{{ row.order_status_name }} </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <p class="text-bold">{{ 'ideas.shop::lang.order.add_order_history' | trans }} </p>
+        <form id="form-add-order-history">
+            <input type="hidden" value="{{ id }}" name="id" />
+            <div class="form-group">
+                <label>{{ 'ideas.shop::lang.order.order_status' | trans }} </label>
+                <select name="order_status_id" class="form-control" id="order-status-change">
+                    {% for row in orderStatus %}
+                    <option value="{{ row.id }}" {{ order.order_status_id == row.id ? 'selected' : '' }}>
+                    {{ row.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>{{ 'ideas.shop::lang.order.comment' | trans }} </label>
+                <textarea name="comment" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" data-request="onOrderStatusHistory">
+                    {{ 'ideas.shop::lang.order.submit' | trans }} </button>
+            </div>
+        </form>
+    </div>
+    <span class="btn-text">
+        <a href="{{ order_url }}">{{ 'backend::lang.form.cancel' | trans }} </a>
+    </span>
+</div>
+
+<!-- Modal return product -->
+<div id="modalReturnProduct" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ 'ideas.shop::lang.order.return_order' | trans }} </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>{{ 'ideas.shop::lang.order.product' | trans }} </label>
+                    <div id="product-return"></div>
+                </div>
+                <div class="form-group">
+                    <label>{{ 'ideas.shop::lang.order.reason' | trans }} </label>
+                    <select name="reason_id" id="reason-return-order" class="form-control select2">
+                        {% for row in reason %}
+                        <option value="{{ row.id }}">{{ row.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-blue pull-left" id="create-order-return">
+                    {{ 'ideas.shop::lang.order.return_order' | trans }} 
+                </div>
+                <div class="btn-green pull-right" data-dismiss="modal">Close</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('#order-status-change').select2();
+    });
+</script>

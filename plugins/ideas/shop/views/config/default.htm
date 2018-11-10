@@ -1,0 +1,418 @@
+<div id="Form-primaryTabs" class="control-tabs primary-tabs layout has-tabs" data-control="tab" data-slidable="">
+<div class="layout-row min-size">
+    <ul class="nav nav-tabs" data-disposable="">
+        <li class="active">
+            <a href="#primarytab-1" data-target="#tabs-general" data-toggle="tab" title="general">
+                <span class="title"><span>
+                    {{ 'ideas.shop::lang.shop.general' | trans }} 
+                </span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#primarytab-1" data-target="#tabs-payment" data-toggle="tab" title="{{ 'ideas.shop::lang.shop.payment_method' | trans }} ">
+                <span class="title"><span>
+                    {{ 'ideas.shop::lang.shop.payment_method' | trans }} 
+                </span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#primarytab-1" data-target="#tabs-download" data-toggle="tab" title="{{ 'ideas.shop::lang.shop.downloadable_tab' | trans }} ">
+                <span class="title"><span>
+                    {{ 'ideas.shop::lang.shop.downloadable_tab' | trans }} 
+                </span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#primarytab-1" data-target="#tabs-checkout" data-toggle="tab" title="{{ 'ideas.shop::lang.shop.checkout_tab' | trans }} ">
+                <span class="title"><span>
+                    {{ 'ideas.shop::lang.shop.checkout_tab' | trans }} 
+                </span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#primarytab-1" data-target="#tabs-seo-homepage" data-toggle="tab" title="{{ 'ideas.shop::lang.shop.seo_homepage_tab' | trans }} ">
+                <span class="title"><span>
+                    {{ 'ideas.shop::lang.shop.seo_homepage_tab' | trans }} 
+                </span></span>
+            </a>
+        </li>
+        <li>
+            <a href="#primarytab-1" data-target="#tabs-homepage" data-toggle="tab" title="{{ 'ideas.shop::lang.shop.homepage_tab' | trans }} ">
+                <span class="title"><span>
+                    {{ 'ideas.shop::lang.shop.homepage_tab' | trans }} 
+                </span></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+{{ form_open() }}
+<div class="tab-content layout-row">
+    <!-- TAB GENERAL -->
+    <div class="tab-pane  active layout-cell" id="tabs-general">
+        <br/>
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.is_cache' | trans,
+            'name': 'is_cache',
+            'value': configData.is_cache
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.mail_method' | trans,
+            'name': 'mail_method',
+            'value': configData.mail_method,
+            'valueName0': 'ideas.shop::lang.config.send' | trans,
+            'valueName1': 'ideas.shop::lang.config.queue' | trans
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'number',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.cache_minute' | trans,
+            'name': 'cache_minute',
+            'value': configData.cache_minute,
+            'default_value': 60,
+            'id' : 'cache_minute',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'select',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.currency_default' | trans,
+            'name': 'currency_default',
+            'value': configData.currency_default,
+            'data': currency,
+            'id' : 'currency',
+            'default_value': 1,
+            'class': 'form-control select2'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'text',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.coupon_prefix' | trans,
+            'name': 'coupon_prefix',
+            'value': configData.coupon_prefix,
+            'id' : 'coupon_prefix',
+            'default_value': 'shop',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'select',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.weight_based_default' | trans,
+            'name': 'weight_based_default',
+            'value': configData.weight_based_default,
+            'data': weight,
+            'id' : 'weight_based_default',
+            'default_value': 1,
+            'class': 'form-control select2',
+            'help_block' : 'ideas.shop::lang.comment.weight_based_default' | trans
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'number',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.coupon_length_random' | trans,
+            'name': 'coupon_length_random',
+            'value': configData.coupon_length_random,
+            'default_value': 10,
+            'id' : 'coupon_length_random',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'number',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.num_product_per_category' | trans,
+            'name': 'num_product_per_category',
+            'value': configData.num_product_per_category,
+            'default_value': 4,
+            'id' : 'num_product_per_category',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.convert_currency' | trans,
+            'name': 'convert_currency',
+            'value': configData.convert_currency
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.is_resize_image_product_list' | trans,
+            'name': 'is_resize_image_product_list',
+            'value': configData.is_resize_image_product_list,
+            'help_block' : 'ideas.shop::lang.comment.have_to_install_gd' | trans
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.is_create_product_type_simple' | trans,
+            'name': 'is_create_product_type_simple',
+            'value': configData.is_create_product_type_simple,
+            'help_block' : 'ideas.shop::lang.comment.is_create_product_type_simple' | trans
+        }
+        %}
+
+    </div>
+
+    <!-- TAB PAYMENT -->
+    <div class="tab-pane layout-cell" id="tabs-payment">
+        <br/>
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.paypal' | trans,
+            'name': 'paypal',
+            'value': configData.paypal
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.stripe' | trans,
+            'name': 'stripe',
+            'value': configData.stripe
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'text',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.paypal_id' | trans,
+            'name': 'paypal_id',
+            'value': configData.paypal_id,
+            'id' : 'paypal_id',
+            'default_value': '',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'text',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.stripe_publish' | trans,
+            'name': 'stripe_publish',
+            'value': configData.stripe_publish,
+            'id' : 'stripe_publish',
+            'default_value': '',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.paypal_mode' | trans,
+            'name': 'paypal_mode',
+            'value': configData.paypal_mode,
+            'valueName0': 'ideas.shop::lang.config.sandbox' | trans,
+            'valueName1': 'ideas.shop::lang.config.production' | trans
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'text',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.stripe_secret' | trans,
+            'name': 'stripe_secret',
+            'value': configData.stripe_secret,
+            'id' : 'stripe_secret',
+            'default_value': '',
+            'class': 'form-control'
+        }
+        %}
+
+    </div>
+
+    <!-- TAB DOWNLOADABLE PRODUCT -->
+    <div class="tab-pane layout-cell" id="tabs-download">
+        <br/>
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.download_once' | trans,
+            'name': 'download_once',
+            'value': configData.download_once
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'checkbox',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.download_right_after_checkout' | trans,
+            'name': 'download_right_after_checkout',
+            'value': configData.download_right_after_checkout
+        }
+        %}
+
+    </div>
+
+    <!-- TAB CHECKOUT -->
+    <div class="tab-pane layout-cell" id="tabs-checkout">
+        <br/>
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'text',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.checkout_ok_url' | trans,
+            'name': 'checkout_ok_url',
+            'value': configData.checkout_ok_url,
+            'id' : 'checkout_ok_url',
+            'default_value': 'checkout-ok',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'text',
+            'span': 'right',
+            'label': 'ideas.shop::lang.config.checkout_fail_url' | trans,
+            'name': 'checkout_fail_url',
+            'value': configData.checkout_fail_url,
+            'id' : 'checkout_fail_url',
+            'default_value': 'checkout-fail',
+            'class': 'form-control'
+        }
+        %}
+    </div>
+
+    <!-- TAB HOMEPAGE SEO -->
+    <div class="tab-pane layout-cell" id="tabs-seo-homepage">
+        <br/>
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'textarea',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.seo_title' | trans,
+            'name': 'seo_title',
+            'value': configData.seo_title,
+            'id' : 'seo_title',
+            'default_value': '',
+            'class': 'form-control',
+            'rows' : 3
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'textarea',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.seo_keyword' | trans,
+            'name': 'seo_keyword',
+            'value': configData.seo_keyword,
+            'id' : 'seo_keyword',
+            'default_value': '',
+            'class': 'form-control',
+            'rows' : 3
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'textarea',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.seo_description' | trans,
+            'name': 'seo_description',
+            'value': configData.seo_description,
+            'id' : 'seo_description',
+            'default_value': '',
+            'class': 'form-control',
+            'rows' : 3
+        }
+        %}
+
+    </div>
+
+    <!-- TAB HOMEPAGE -->
+    <div class="tab-pane layout-cell" id="tabs-seo-homepage">
+        <br/>
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'number',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.number_featured_product' | trans,
+            'name': 'number_featured_product',
+            'value': configData.number_featured_product,
+            'default_value': 4,
+            'id' : 'number_featured_product',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'number',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.number_bestseller_product' | trans,
+            'name': 'number_bestseller_product',
+            'value': configData.number_bestseller_product,
+            'default_value': 4,
+            'id' : 'number_bestseller_product',
+            'class': 'form-control'
+        }
+        %}
+
+        {% include 'ideas.shop::config.form' with
+        {
+            'type': 'number',
+            'span': 'left',
+            'label': 'ideas.shop::lang.config.number_is_new_product' | trans,
+            'name': 'number_is_new_product',
+            'value': configData.number_is_new_product,
+            'default_value': 2,
+            'id' : 'number_is_new_product',
+            'class': 'form-control'
+        }
+        %}
+    </div>
+
+    <div class="form-group col-md-6 span-left">
+        <button type="submit" class="btn btn-primary" data-request="onSaveConfigDefault" id="update-config-default">save</button>
+    </div>
+</div>
+{{ form_close() }}
+</div>

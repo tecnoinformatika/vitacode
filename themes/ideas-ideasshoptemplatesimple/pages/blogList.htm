@@ -1,0 +1,70 @@
+title = "Blog list"
+url = "/blog-list/:page?"
+layout = "default"
+is_hidden = 0
+
+[\RainLab\Blog\Components\Posts Posts]
+postsPerPage = "5"
+==
+
+<div class="category-top">
+    <img class="img-responsive" src="{{image_header_bottom | media}}" />
+</div>
+<div class="container" id="breadcrumb-div">
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog list</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" id="product-div">
+    <div class="row">
+        <div class="col-md-9" id="blog-list">
+            {% for post in posts %}
+            <div id="blog-list-row">
+                {% if post.featured_images.count %}
+                <div class="blog-image-big">
+                    <img class="img-responsive" src="{{post.featured_images.0.path}}" />
+                </div>
+                {% endif %}
+                <div class="blog-list-title">
+                    <a href="/post/{{post.slug}}">
+                    {{post.title}}
+                    </a>
+                </div>
+                <div class="blog-list-under-title">
+                        <span class="blog-list-date">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            {{post.published_at}}
+                        </span>
+                        <span class="blog-list-author">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                            Admin
+                        </span>
+                        <span class="blog-list-tag">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            blog, post
+                        </span>
+                </div>
+                <div class="blog-list-short-intro">
+                    {{post.excerpt}}
+                </div>
+                <div class="blog-list-read-more">
+                    <a href="/post/{{post.slug}}">Read more</a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="row text-center">
+                {{posts.links | raw}}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <?php include('_blog_sidebar.php'); ?>
+        </div>
+    </div>
+</div>
+
+

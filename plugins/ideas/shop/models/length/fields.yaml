@@ -1,0 +1,17 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    unit:
+        label: ideas.shop::lang.field.unit
+        span: left
+
+    value:
+        label: ideas.shop::lang.field.value
+        span: left
+        default: 0
+

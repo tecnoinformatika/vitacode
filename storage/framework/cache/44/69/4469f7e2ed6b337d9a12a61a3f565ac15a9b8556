@@ -1,0 +1,40 @@
+1539634803a:1:{s:14:"ship_slide.htm";a:6:{s:8:"fileName";s:14:"ship_slide.htm";s:7:"content";s:930:"==
+<?php
+function onStart()
+{
+    $this['url'] = base_path('storage');
+    $ship_slide = DB::table('ideas_theme_config_image_detail')->join('ideas_theme_config', 'ideas_theme_config.id', '=', 'ideas_theme_config_image_detail.theme_config_id')->where('ideas_theme_config.slug', '=', 'ship_slide')->select('ideas_theme_config_image_detail.title as title', 'ideas_theme_config_image_detail.description as description', 'ideas_theme_config_image_detail.url as image')->get();
+
+  $this['ship_slide'] = $ship_slide;
+    
+}
+?>
+==
+<div class="row" id="ship-return" >
+    {% for image in ship_slide %}
+    <div class="col-md-4 text-center">
+        <div class="ship-return-image"><img src="/storage/app/media/{{image.image}}" /> </div>
+        <div class="ship-return-title">{{image.title}}</div>
+        <div class="ship-return-content">
+            {{image.description}}
+        </div>
+    </div>
+    {% endfor %}
+</div>";s:5:"mtime";i:1535682030;s:6:"markup";s:400:"<div class="row" id="ship-return" >
+    {% for image in ship_slide %}
+    <div class="col-md-4 text-center">
+        <div class="ship-return-image"><img src="/storage/app/media/{{image.image}}" /> </div>
+        <div class="ship-return-title">{{image.title}}</div>
+        <div class="ship-return-content">
+            {{image.description}}
+        </div>
+    </div>
+    {% endfor %}
+</div>";s:4:"code";s:514:"function onStart()
+{
+    $this['url'] = base_path('storage');
+    $ship_slide = DB::table('ideas_theme_config_image_detail')->join('ideas_theme_config', 'ideas_theme_config.id', '=', 'ideas_theme_config_image_detail.theme_config_id')->where('ideas_theme_config.slug', '=', 'ship_slide')->select('ideas_theme_config_image_detail.title as title', 'ideas_theme_config_image_detail.description as description', 'ideas_theme_config_image_detail.url as image')->get();
+
+  $this['ship_slide'] = $ship_slide;
+    
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}

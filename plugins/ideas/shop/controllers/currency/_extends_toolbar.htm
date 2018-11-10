@@ -1,0 +1,9 @@
+<?php
+$isUpdateCurrency = \Ideas\Shop\Models\Config::getConfigByKey('convert_currency');
+if ($isUpdateCurrency == \Ideas\Shop\Models\IdeasShop::ENABLE) {
+?>
+<a href="<?php echo Backend::url('ideas/shop/currency/updatevalue') ?>"
+   class="btn btn-primary">
+    <?php echo e(trans('ideas.shop::lang.currency.update_value_currency')) ?>
+</a>
+<?php } ?>

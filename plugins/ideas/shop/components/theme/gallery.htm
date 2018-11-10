@@ -1,0 +1,7 @@
+<div class="owl-carousel owl-theme" id="owl-carousel">
+    {% for gallery in galleries %}
+    {% for image in gallery.image %}
+    <div class="item"><img src="{{image.url | media | noImage }}" /></div>
+    {% endfor %}
+    {% endfor %}
+</div>

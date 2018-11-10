@@ -1,0 +1,9 @@
+1539634802a:1:{s:13:"userOrder.htm";a:10:{s:8:"fileName";s:13:"userOrder.htm";s:7:"content";s:188:"title = "Order manager"
+url = "/user/order"
+layout = "default"
+
+[Ideas\Shop\Components\UserOrder UserOrder]
+[RainLab\User\Components\Session Session]
+==
+
+{% component 'UserOrder::order' %}";s:5:"mtime";i:1535642258;s:6:"markup";s:34:"{% component 'UserOrder::order' %}";s:4:"code";N;s:5:"title";s:13:"Order manager";s:3:"url";s:11:"/user/order";s:6:"layout";s:7:"default";s:41:"Ideas\Shop\Components\UserOrder UserOrder";a:0:{}s:39:"RainLab\User\Components\Session Session";a:0:{}}}

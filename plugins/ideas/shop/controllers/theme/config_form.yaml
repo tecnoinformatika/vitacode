@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.theme
+
+# Model Form Field configuration
+form: $/ideas/shop/models/theme/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Theme
+
+# Default redirect location
+defaultRedirect: ideas/shop/theme
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/theme/update/:id
+    redirectClose: ideas/shop/theme
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/theme/update/:id
+    redirectClose: ideas/shop/theme
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

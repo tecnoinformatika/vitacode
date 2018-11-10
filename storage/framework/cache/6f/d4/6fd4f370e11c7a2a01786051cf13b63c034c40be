@@ -1,0 +1,31 @@
+1539226524a:1:{s:21:"template/overview.htm";a:5:{s:8:"fileName";s:21:"template/overview.htm";s:7:"content";s:569:"<section id="overview" class="parallax-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
+                <h3>{{ this.theme.overview_title }}</h3>
+                <p>{{ this.theme.overview_content|nl2br }}</p>
+            </div>
+
+            <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+                <img src="{{ 'assets/images/overview-img.jpg'|theme }}" class="img-responsive" alt="Overview">
+            </div>
+
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1535642237;s:6:"markup";s:569:"<section id="overview" class="parallax-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
+                <h3>{{ this.theme.overview_title }}</h3>
+                <p>{{ this.theme.overview_content|nl2br }}</p>
+            </div>
+
+            <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+                <img src="{{ 'assets/images/overview-img.jpg'|theme }}" class="img-responsive" alt="Overview">
+            </div>
+
+        </div>
+    </div>
+</section>";s:4:"code";N;}}

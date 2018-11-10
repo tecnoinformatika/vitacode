@@ -1,0 +1,46 @@
+<div class="blog-list-search">
+    <form>
+        <div class="form-group">
+            <input type="text" name="blog_search" id="search-form-input" class="form-control" placeholder="search" />
+            <input type="submit" value="submit" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+<div class="recent-post">
+    <div class="recent-post-header">
+        Recent Posts
+    </div>
+    <div class="recent-post-body">
+        <?php for ($i=0; $i<5; $i++) { ?>
+        <div class="recent-post-title">
+            This is recent post title
+        </div>
+        <?php } ?>
+    </div>
+</div>
+<div class="recent-post">
+    <div class="recent-post-header">
+        Recent Comment
+    </div>
+    <div class="recent-post-body">
+        <?php for ($i=0; $i<5; $i++) { ?>
+        <div class="recent-post-comment">
+            <span class="comment-author">Admin</span>
+            <span class="comment-on">ON</span>
+            <span class="comment-post">Product 1</span>
+        </div>
+        <?php } ?>
+    </div>
+</div>
+<div class="recent-post">
+    <div class="recent-post-header">
+        Category
+    </div>
+    <div class="recent-post-body">
+        <?php for ($i=0; $i<5; $i++) { ?>
+        <div class="recent-post-comment text-grey">
+            Blog
+        </div>
+        <?php } ?>
+    </div>
+</div>

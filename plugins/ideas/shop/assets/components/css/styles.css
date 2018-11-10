@@ -1,0 +1,9 @@
+.class-hidden {
+    display: none;
+}
+.select2-container--default {
+    width: 100% !important;
+}
+.product-image img {
+    margin: 0 auto;
+}

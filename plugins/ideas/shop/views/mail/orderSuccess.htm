@@ -1,0 +1,23 @@
+subject = "Order success"
+description = "order successful"
+==
+Thank you for purchase our product<br/>
+Order Id : {{orderId | strPad}}<br/>
+Product <br/>
+<table id="mail-table">
+    <tr>
+        <th>Name</th>
+        <th>Quality</th>
+        <th>Price</th>
+    </tr>
+    {% for product in cart %}
+    <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.qty}}</td>
+        <td>{{product.price | displayPriceAndCurrency}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br/>
+Total:
+{{total  | displayPriceAndCurrency}}

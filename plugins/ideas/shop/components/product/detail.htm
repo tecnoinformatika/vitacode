@@ -1,0 +1,233 @@
+{% if found_result == page_not_found %}
+    {% partial __SELF__ ~ "::404"%}
+{% else %}
+
+{% flash %}
+<p data-control="flash-message" data-interval="3" class="success">
+    {{ message }}
+</p>
+{% endflash %}
+<div id="breadcrumb" class="desktop-12">
+  <a href="../index.html" class="homepage-link" title="Home">Home</a>
+  
+              
+  <span class="separator">&raquo;</span> 
+  
+  
+  <a href="../collections/relojes.html" title="">{{breadCrumb | breadCrumbDisplay}}</a>
+  
+  
+  <span class="separator">&raquo;</span>
+  <span class="page-title">{{data.name}}</span>
+  
+</div>
+
+
+<div class="container" id="product-div">
+<div class="row">
+    <div class="col-md-6">
+        <div id="product-gallery">
+            {% if gallery is not empty%}
+            <img class="xzoom" id="xzoom-big-image" src="{{data.featured_image | media | noImage}}"
+                 width="554" height="556" xoriginal="{{data.featured_image | media | noImage}}" />
+            <br/>
+            <ul class="xzoom-thumbs">
+                <li>
+                    <a href="{{data.featured_image | media | noImage}}">
+                        <img class="xzoom" width="80" src="{{data.featured_image | media | noImage}}">
+                    </a>
+                </li>
+                {% for image in gallery%}
+                <li>
+                    <a href="{{image | media}}">
+                        <img class="xzoom" width="80" src="{{image | media}}">
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {%else%}
+            <img class="xzoom" id="xzoom-big-image" src="{{data.featured_image | media | noImage}}"
+                 width="554" height="556" xoriginal="{{data.featured_image | media | noImage}}" />
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div id="detail-info">
+            <div class="detail-brand">Adidas</div>
+            <div class="detail-name">{{data.name}}</div>
+            <div class="detail-star-review">
+                <div>
+                    {{ data.review_point | displayReview}}
+                </div>
+                <div class="review">
+                    <span class="number-review">{{data.review_count}} Reviews</span>
+                    |
+                    <a href="javascript:void(0)" class="modal-review">{{ 'ideas.shop::lang.review.write_review' | trans }}</a>
+                </div>
+            </div>
+            <div class="detail-price">
+                <span id="product-price">{{data.price  | displayPriceAndCurrency}}</span>
+            </div>
+            <div class="detail-stock">
+                Availability:
+                {% if data.is_out_of_stock == is_out_of_stock %}
+                <span class="stock-status out-of-stock">Out Of Stock</span>
+                {% else %}
+                <span class="stock-status">In Stock</span>
+                {% endif %}
+            </div>
+            <hr/>
+            <div class="detail-short-intro">
+                {{data.attribute.short_intro}}
+            </div>
+            {% if configurable is not empty %}
+            <div id="configurable-data" style="display: none;">{{configurable.childConvert|json_encode()}}</div>
+            {% set i = 1%}
+            {% for f in configurable.filter %}
+            <div class="product-detail-filter-name">{{f.name}}</div>
+            {% for fo in f.options %}
+            {% if fo.filter_type == filter_color %}
+            <div id="filter-option-{{fo.id}}" attr-option-id="{{fo.id}}"
+                 attr-next="{{fo.filter_related}}"  attr-level="{{i}}"
+                 class="filter-option-detail level-{{i}} option-color"
+                 style="background-color: {{fo.option_value}}"></div>
+            {% elseif fo.filter_type == filter_image %}
+            <img id="filter-option-{{fo.id}}" attr-level="{{i}}"
+                 attr-next="{{fo.filter_related}}"  attr-option-id="{{fo.id}}"
+                 class="filter-option-detail level-{{i}} option-image" src="{{fo.option.value | media}}" />
+            {% else %}
+            <div id="filter-option-{{fo.id}}" attr-option-id="{{fo.id}}"
+                 attr-next="{{fo.filter_related}}"  attr-level="{{i}}"
+                 class="filter-option-detail level-{{i}} option-label"><span>{{fo.option_value}}</span></div>
+            {% endif %}
+            {% endfor %}
+            {% set i = i+1 %}
+            {% endfor %}
+            {% endif %}
+
+            {% if (data.is_out_of_stock == is_out_of_stock) or (data.product_type == type_product_configurable) %}
+            {% set classHidden = 'class-hidden'%}
+            {% else %}
+            {% set classHidden = ''%}
+            {% endif %}
+            <div class="qty {{classHidden}}" id="qty-detail-div">
+                <span class="qty-text">Qty: </span>
+                <input type="number" name="qty" class="qty-input" id="qty-input" value="1"/>
+                    <span class="add-to-cart buy-now-detail" id="buy-now-detail-span" attr-name="{{data.name}}"
+                          attr-qty="{{data.qty}}"
+                          attr-qty-order="{{data.qty_order}}"
+                          attr-image="{{data.featured_image}}"
+                          attr-price="{{data.final_price}}"
+                          attr-product-id="{{data.id}}"
+                          attr-slug="{{data.slug}}"
+                          attr-weight="{{data.attribute.weight}}"
+                          attr-weight-id="{{data.attribute.weight_id}}"
+                            >
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        Add to cart
+                    </span>
+            </div>
+            <div class="detail-sku-cat-tags">
+                <div class="detail-sku">
+                    Sku: <span class="text-grey">{{data.sku}}</span>
+                </div>
+                <div class="detail-category">
+                    Categories: <span class="text-grey">men, clothes</span>
+                </div>
+                <div class="detail-tags">
+                    Tags: <span class="text-grey">tag 1, tag 2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="hr-class"></div>
+<!-- TAB CONTENT -->
+<div class="row" id="detail-tab-content">
+    <ul class="nav nav-tabs" id="nav-tabs-ul" role="tablist">
+        <li role="presentation" class="active"><a href="#introduction" aria-controls="introduction" role="tab" data-toggle="tab">Introduction</a></li>
+        <li role="presentation"><a href="#review" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
+        <li role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab">Messages</a></li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div role="tabpanel" class="row tab-pane active" id="introduction">
+        <div class="col-md-12">
+            {{data.attribute.full_intro | raw}}
+        </div>
+    </div>
+    <div role="tabpanel" class="row tab-pane" id="review">
+        <div class="col-md-12">
+            {% if review is not empty %}
+            {% for re in review %}
+            <div class="review-div">
+                <div class="review-author">{{re.author}}</div>
+                <div class="review-star-rating">
+                    {{ re.rate | displayReview }}
+                </div>
+                <div class="review-created-at">{{re.created_at}}</div>
+                <div class="review-content">{{re.content}}</div>
+            </div>
+            <hr/>
+            {% endfor %}
+            {% endif %}
+            <a href="javascript:void(0)" class="modal-review">{{ 'ideas.shop::lang.review.write_review' | trans }}</a>
+        </div>
+    </div>
+    <div role="tabpanel" class="row tab-pane" id="message">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+</div>
+<div class="hr-class"></div>
+<!-- RELATE PRODUCT -->
+<h2 class="text-center">Related Products</h2>
+<div class="text-center">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    </p>
+</div>
+<div class="row">
+    {% if related is not empty %}
+    {% for product in related %}
+    <div class="col-md-3 product-div">
+        <div class="product-image text-center">
+            <a href="{{product.slug}}">
+                <img class="img-responsive" src="{{product.featured_image | media}}">
+            </a>
+        </div>
+        <div class="product-name text-center">
+            <a href="{{product.slug}}">{{product.name}}</a>
+        </div>
+        <div class="text-center">
+            {{ product.review_point | displayReview}}
+        </div>
+        <div class="product-price text-center">
+            {{product.price}}$
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary {{product.action_class}}"
+                    attr-qty="{{product.qty}}"
+                    attr-qty-order="{{product.qty_order}}"
+                    attr-name="{{product.name}}"
+                    attr-image="{{product.featured_image}}"
+                    attr-price="{{product.final_price}}"
+                    attr-product-id="{{product.id}}"
+                    attr-slug="{{product.slug}}"
+                    attr-weight="{{product.attribute.weight}}"
+                    attr-weight-id="{{product.attribute.weight_id}}"
+                    >
+
+                {{product.action_text}}
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+</div>
+{% partial __SELF__ ~ '::review' %}
+{% endif %}
+

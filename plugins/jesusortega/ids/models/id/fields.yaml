@@ -1,0 +1,11 @@
+fields:
+    id_fabrica:
+        label: ID_fabrica
+        span: auto
+        placeholder: ID
+        type: text
+    pin:
+        label: PIN
+        span: auto
+        placeholder: pin
+        type: number

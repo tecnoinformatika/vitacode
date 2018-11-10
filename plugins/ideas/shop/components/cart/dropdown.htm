@@ -1,0 +1,31 @@
+<div id="msg_js" style="display: none">{{msg_js}}</div>
+{% if cart is not empty %}
+    <table>
+        <tbody>
+        {% for item in cart %}
+        <tr>
+            <td>
+                <a href="{{item.slug}}">
+                    <img src="{{item.image | media}}" width="70" height="70"/>
+                </a>
+            </td>
+            <td>
+                <div class="product-cart-name"><a href="{{item.slug}}">{{item.name}}</a></div>
+                <div class="product-money-qty">{{item.qty}} x ${{item.price}} </div>
+            </td>
+            <td><i class="fa fa-trash-o cart-remove-item" attr-product-id="{{item.id}}" aria-hidden="true"></i></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="hr-class-30"></div>
+    <div class="cart-sub-total">
+        <div class="cart-sub-total-text pull-left">{{ 'ideas.shop::lang.component.sub_total' | trans }}</div>
+        <div class="cart-sub-total-money pull-right"> {{totalPrice | displayPriceAndCurrency}}</div>
+    </div>
+    <div id="view-cart">
+        <a href="/cart" class="view-cart text-center">{{ 'ideas.shop::lang.component.view_cart' | trans }}</a>
+    </div>
+{% else %}
+    No item
+{% endif %}

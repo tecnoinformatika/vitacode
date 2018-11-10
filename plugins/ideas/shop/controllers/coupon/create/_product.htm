@@ -1,0 +1,20 @@
+<?php
+$id = $formModel->id;
+$product = [];
+$str = '';
+if ($id != 0) {
+    $product = Ideas\Shop\Models\Coupon::getProductCoupon($id);
+    $str = Ideas\Shop\Models\Coupon::getIdOfProductOrCategory($product);
+}
+?>
+<input type="hidden" id="product_update" value="<?php echo $str ?>" />
+
+<div class="form-group">
+    <select name="product[]" class="form-control select2" id="product-search" style="width:100%;" multiple="multiple">
+        <?php if (!empty($product)) { ?>
+        <?php foreach ($product as $row) { ?>
+        <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+        <?php } ?>
+        <?php } ?>
+    </select>
+</div>

@@ -1,0 +1,11 @@
+1539634802a:1:{s:12:"register.htm";a:10:{s:8:"fileName";s:12:"register.htm";s:7:"content";s:188:"title = "Register"
+url = "/register"
+layout = "default"
+
+[Ideas\Shop\Components\UserExtend UserExtend]
+[RainLab\User\Components\Account Account]
+==
+
+{% component 'UserExtend::register'%}
+
+";s:5:"mtime";i:1535642258;s:6:"markup";s:37:"{% component 'UserExtend::register'%}";s:4:"code";N;s:5:"title";s:8:"Register";s:3:"url";s:9:"/register";s:6:"layout";s:7:"default";s:43:"Ideas\Shop\Components\UserExtend UserExtend";a:0:{}s:39:"RainLab\User\Components\Account Account";a:0:{}}}

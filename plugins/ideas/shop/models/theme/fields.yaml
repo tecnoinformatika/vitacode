@@ -1,0 +1,23 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    name:
+        label: ideas.shop::lang.field.name
+        span: left
+
+    slug:
+        label: ideas.shop::lang.field.slug
+        span: right
+        preset: name
+
+    type:
+        label: ideas.shop::lang.field.type
+        span: left
+        type: dropdown
+
+    _value:
+        label: ideas.shop::lang.field.value
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/theme/create/_value.htm
+

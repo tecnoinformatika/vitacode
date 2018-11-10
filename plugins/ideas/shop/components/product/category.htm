@@ -1,0 +1,250 @@
+{% if found_result == page_not_found %}
+    {% partial __SELF__ ~ "::404"%}
+{% else %}
+<div class="category-top">
+    <img class="img-responsive" src="{{image_header_bottom | media}}" />
+</div>
+<div class="container" id="breadcrumb-div">
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            {{breadCrumb | breadCrumbDisplay}}
+        </ul>
+    </div>
+</div>
+<div class="container" id="category-div">
+    <div class="row" id="sort-grid">
+        <div class="col-md-3 sort-grid" id="sort-grid-count">Showing {{count}} result</div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1 sort-grid" id="sort-grid-sort-by">Sort By</div>
+        <div class="col-md-2 sort-grid" id="sort-grid-select">
+            <div class="form-group">
+                <select name="sort-by" id="product-sort-by" class="form-control">
+                    <option value="">-- sort by --</option>
+                    <option value="price-asc" {{sortByString == 'price-asc' ? 'selected' : ''}}>Price low to high</option>
+                    <option value="price-desc" {{sortByString == 'price-desc' ? 'selected' : ''}}>Price high to low</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-md-3" id="filter-div">
+            <!-- now shopping by -->
+            <div class="filter-header accordion">
+                Now Shopping by
+            </div>
+            <div class="filter-body panel" id="now-shopping-by">
+    
+            </div>
+            <!-- end now shopping by -->
+    
+            <!-- SEARCH -->
+            <div class="filter-header accordion">
+                Search
+            </div>
+            <div class="filter-body panel" id="filter-search">
+                <ul>
+                    <li class="filter-search form-group">
+                        <input type="text" name="search_product" id="search_product" class="form-control" value="" />
+                        <i class="fa fa-search" id="category-fa-search" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+            <!-- END SEARCH -->
+    
+            <!-- PRICE RANGE -->
+            <div class="filter-header accordion">
+                Price
+            </div>
+            <div class="filter-body panel" id="filter-price-range">
+                <div class="filter-price">
+                    <div id="price-range">
+                        <b class="pull-left">$ 15.00</b>
+                        <b class="pull-right">$ 800.00</b>
+                    </div>
+                    <input id="ex2" type="text" class="span2" value=""
+                           data-slider-min="15.00" data-slider-max="800.00"
+                           data-slider-step="5"
+                           data-slider-value="[15.00,800.00]"/>
+                </div>
+                <ul>
+                    <li id="price-range-div">
+                        <input type="text" value="15.00" class="price-range"/>
+                        <span class="price-range" id="price-range-between"></span>
+                        <input type="text" value="800.00" class="price-range"/>
+                    </li>
+                </ul>
+            </div>
+            <!-- END PRICE RANGE -->
+    
+            <!-- FILTER -->
+                    <div class="filter-header accordion">
+                color
+            </div>
+            <div class="filter-body panel">
+                <ul>
+                                                    <li>
+                        <input type="checkbox" class="filter-option" value="2"
+                        />
+                                            <div class="filter_option_color_category"
+                             style="background-color: #0f0f0f"></div>
+                                            <span class="filter-counter">2</span>
+                    </li>
+                                                                    <li>
+                        <input type="checkbox" class="filter-option" value="1"
+                        />
+                                            <div class="filter_option_color_category"
+                             style="background-color: #ffffff"></div>
+                                            <span class="filter-counter">3</span>
+                    </li>
+                                                </ul>
+            </div>
+                    <div class="filter-header accordion">
+                size
+            </div>
+            <div class="filter-body panel">
+                <ul>
+                                                    <li>
+                        <input type="checkbox" class="filter-option" value="5"
+                        />
+                                            <a href="javascript:void(0);">L</a>
+                                            <span class="filter-counter">3</span>
+                    </li>
+                                                                    <li>
+                        <input type="checkbox" class="filter-option" value="3"
+                        />
+                                            <a href="javascript:void(0);">S</a>
+                                            <span class="filter-counter">3</span>
+                    </li>
+                                                                    <li>
+                        <input type="checkbox" class="filter-option" value="4"
+                        />
+                                            <a href="javascript:void(0);">M</a>
+                                            <span class="filter-counter">2</span>
+                    </li>
+                                                                    <li>
+                        <input type="checkbox" class="filter-option" value="6"
+                        />
+                                            <a href="javascript:void(0);">XL</a>
+                                            <span class="filter-counter">2</span>
+                    </li>
+                                                </ul>
+            </div>
+                    <div class="filter-header accordion">
+                brand
+            </div>
+            <div class="filter-body panel">
+                <ul>
+                                                    <li>
+                        <input type="checkbox" class="filter-option" value="7"
+                        />
+                                            <a href="javascript:void(0);">Sony</a>
+                                            <span class="filter-counter">3</span>
+                    </li>
+                                                                    <li>
+                        <input type="checkbox" class="filter-option" value="8"
+                        />
+                                            <a href="javascript:void(0);">LG</a>
+                                            <span class="filter-counter">1</span>
+                    </li>
+                                                </ul>
+            </div>
+                    <div class="filter-header accordion">
+                test
+            </div>
+            <div class="filter-body panel">
+                <ul>
+                                                    <li>
+                        <input type="checkbox" class="filter-option" value="9"
+                        />
+                                            <a href="javascript:void(0);">111</a>
+                                            <span class="filter-counter">2</span>
+                    </li>
+                                                </ul>
+            </div>
+                    <!-- END FILTER -->
+    
+            <!-- RATING -->
+            <div class="filter-header accordion">
+                Rating
+            </div>
+            <div class="filter-body panel">
+                <ul>
+                                    <li class="review-point" attr-point="0"> (11)</li>
+                                    <li class="review-point" attr-point="4"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span> (2)</li>
+                                </ul>
+            </div>
+            <!-- END RATING -->
+    
+        </div>
+        <div class="col-md-9" id="list-product">
+            <div class="row">
+                {% if data is not empty %}
+                {% set i = 1 %}
+                {% for product in data%}
+                <div class="col-md-4 product-div {{i in firstArray ? 'first' : ''}}">
+                    <div class="product-image">
+                        <a href="{{product.slug}}">
+                            <img class="img-responsive" src="{{product.featured_image | media | noImage }}">
+                        </a>
+                    </div>
+                    <div class="product-name text-center">
+                        <a href="{{product.slug}}">{{product.name}}</a>
+                    </div>
+                    <div class="product-price text-center">
+                        {{product.price | displayPriceAndCurrency}}
+                    </div>
+                    <div class="text-center">
+                        {{ product.review_point | displayReview}}
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary {{product.action_class}}"
+                                attr-qty="{{product.qty}}"
+                                attr-qty-order="{{product.qty_order}}"
+                                attr-name="{{product.name}}"
+                                attr-image="{{product.featured_image}}"
+                                attr-price="{{product.final_price}}"
+                                attr-product-id="{{product.id}}"
+                                attr-slug="{{product.slug}}"
+                                attr-weight="{{product.weight}}"
+                                attr-weight-id="{{product.weight_id}}"
+                                >
+                            {{product.action_text}}
+                        </button>
+                    </div>
+                </div>
+                {% set i = i + 1 %}
+                {% endfor %}
+                {% else %}
+                No data
+                {% endif %}
+            </div>
+
+            <div class="row text-center">
+                <div class="pagination">
+                    <ul>
+                        {% if pages.currentPage != 1 %}
+                        <li><a href="javascript:void(0)" class="cat-pag" attr-page="1"> << </a></li>
+                        <li><a href="javascript:void(0)" class="cat-pag" attr-page="{{page.currentPage - 1}}"> < </a></li>
+                        {% endif %}
+                        {% if pages.totalPages != 1 %}
+                        {% for page in pages.pages %}
+                        <li class="">
+                            <a href="javascript:void(0)"
+                               class="{{pages.currentPage == page ? 'active' : ''}} cat-pag"
+                               attr-page="{{page}}">{{page}}
+                            </a>
+                        </li>
+                        {% endfor %}
+                        {% endif %}
+                        {% if pages.currentPage != pages.totalPages %}
+                        <li><a href="javascript:void(0)" class="cat-pag" attr-page="{{pages.currentPage + 1}}"> > </a></li>
+                        <li><a href="javascript:void(0)" class="cat-pag" attr-page="{{pages.totalPages}}"> >> </a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif%}

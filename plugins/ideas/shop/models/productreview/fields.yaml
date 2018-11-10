@@ -1,0 +1,17 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    author:
+        label: ideas.shop::lang.field.author
+        span: left
+
+    content:
+        label: ideas.shop::lang.field.content
+        span: left
+
+    status:
+        label: ideas.shop::lang.field.status
+        type: switch
+        span: left
+        default: 1

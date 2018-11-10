@@ -1,0 +1,28 @@
+==
+<?php
+function onStart()
+{
+    $this['url'] = base_path('storage');
+    $testimonials = DB::table('ideas_theme_config_image_detail')->join('ideas_theme_config', 'ideas_theme_config.id', '=', 'ideas_theme_config_image_detail.theme_config_id')->where('ideas_theme_config.slug', '=', 'testimonials')->select('ideas_theme_config_image_detail.title as title', 'ideas_theme_config_image_detail.description as description', 'ideas_theme_config_image_detail.url as image')->get();
+
+  $this['testimonials'] = $testimonials;
+    
+}
+?>
+==
+<div class="owl-carousel owl-theme">
+    {% for image in testimonials %}
+    <div class="item">
+         
+        <div class="user-pic text-center">
+            <img src="/storage/app/media/{{image.image}}" />
+        </div>
+        <p class="user-comment text-center">
+            {{image.description}}
+        </p>
+        <div class="user-name text-center">
+            {{image.title}}
+        </div>
+    </div>
+    {% endfor %}
+</div>

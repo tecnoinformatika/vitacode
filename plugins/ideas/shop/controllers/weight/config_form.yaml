@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.weight
+
+# Model Form Field configuration
+form: $/ideas/shop/models/weight/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\Weight
+
+# Default redirect location
+defaultRedirect: ideas/shop/weight
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/weight/update/:id
+    redirectClose: ideas/shop/weight
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/weight/update/:id
+    redirectClose: ideas/shop/weight
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

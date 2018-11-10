@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ideas.shop::lang.controller.taxclass
+
+# Model Form Field configuration
+form: $/ideas/shop/models/taxclass/fields.yaml
+
+# Model Class name
+modelClass: Ideas\Shop\Models\TaxClass
+
+# Default redirect location
+defaultRedirect: ideas/shop/taxclass
+
+# Create page
+create:
+    title: ideas.shop::lang.groups.create_title
+    redirect: ideas/shop/taxclass/update/:id
+    redirectClose: ideas/shop/taxclass
+
+# Update page
+update:
+    title: ideas.shop::lang.groups.update_title
+    redirect: ideas/shop/taxclass/update/:id
+    redirectClose: ideas/shop/taxclass
+
+# Preview page
+preview:
+    title: ideas.shop::lang.groups.update_title

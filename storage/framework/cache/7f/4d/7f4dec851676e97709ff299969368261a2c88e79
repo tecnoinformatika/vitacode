@@ -1,0 +1,9 @@
+1539634802a:1:{s:20:"userOrderInvoice.htm";a:10:{s:8:"fileName";s:20:"userOrderInvoice.htm";s:7:"content";s:208:"title = "Order invoice"
+url = "/order/invoice/:id"
+layout = "default"
+
+[Ideas\Shop\Components\UserOrderInvoice UserOrderInvoice]
+[RainLab\User\Components\Session Session]
+==
+
+{% component 'UserOrderInvoice' %";s:5:"mtime";i:1535642258;s:6:"markup";s:33:"{% component 'UserOrderInvoice' %";s:4:"code";N;s:5:"title";s:13:"Order invoice";s:3:"url";s:18:"/order/invoice/:id";s:6:"layout";s:7:"default";s:55:"Ideas\Shop\Components\UserOrderInvoice UserOrderInvoice";a:0:{}s:39:"RainLab\User\Components\Session Session";a:0:{}}}

@@ -1,0 +1,22 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: ideas.shop::lang.field.id
+
+    name:
+        label: ideas.shop::lang.field.name
+        searchable: true
+
+    status:
+        label: ideas.shop::lang.field.status
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/baseview/list/_status.htm
+
+    is_homepage:
+        label: ideas.shop::lang.field.is_homepage
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/category/list/_is_homepage.htm

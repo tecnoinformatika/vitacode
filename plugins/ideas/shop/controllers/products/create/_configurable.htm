@@ -1,0 +1,23 @@
+<?php
+$configurableData = \Ideas\Shop\Facades\Configurable::getConfigurableData($formModel->id);
+?>
+<input type="hidden" name="id_update_old" value="<?php echo isset($configurableData['idUpdateOld']) ? $configurableData['idUpdateOld'] : 0 ?>"/>
+<div id="variant_validate" style="display: none;"><?php echo isset($configurableData['validateVariant']) ? json_encode($configurableData['validateVariant']) : ''?></div>
+<textarea id="variant_json" name="variant_json" style="display: none;"><?php echo isset($configurableData['config']) ? json_encode($configurableData['config']) : ''?></textarea>
+
+<div class="btn btn-primary" id="button-create-variant">
+    <?php echo e(trans('ideas.shop::lang.product.add_variant')) ?>
+</div>
+<div id="variant-product">
+    <?php if (!empty($configurableData['config'])) { ?>
+    <?php $variant = $configurableData['config']; $v=0?>
+        <?php foreach ($variant as $row) { ?>
+        <div class="single-variant" id="single-variant-<?php echo $v ?>" attr-variant-index="<?php echo $v ?>">
+            <div class="single-variant-data">Variant : <?php echo $row['str_variant_label'] ?> | Qty : <?php echo $row['qty'] ?> | Price : <?php echo $row['price'] ?></div>
+            <span class="single-variant-update" attr-variant-update="<?php echo $row['id_update']; ?>" attr-variant-index="<?php echo $v ?>">Update</span>
+            <span class="single-variant-remove" attr-variant-index="<?php echo $v ?>">Remove</span>
+        </div>
+        <?php $v++; ?>
+        <?php } ?>
+    <?php } ?>
+</div>

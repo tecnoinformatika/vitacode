@@ -1,0 +1,35 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: ideas.shop::lang.order.id
+        searchable: true
+
+    billing_email:
+        label: ideas.shop::lang.field.billing_email
+        searchable: true
+
+    shipping_email:
+        label: ideas.shop::lang.field.shipping_email
+        searchable: true
+
+    order_status_id:
+        label: ideas.shop::lang.order.order_status_id
+        relation: order_status_relation
+        select: name
+
+    total:
+        label: ideas.shop::lang.order.total
+        type: partial
+        path: ~/plugins/ideas/shop/controllers/order/list/_total.htm
+
+    created_at:
+        label: ideas.shop::lang.field.created_at
+        type: date
+
+    updated_at:
+        label: ideas.shop::lang.field.updated_at
+        type: date

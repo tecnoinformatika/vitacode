@@ -1,0 +1,1 @@
+Authority to provide plugin "Ideas.Shop" could not be found

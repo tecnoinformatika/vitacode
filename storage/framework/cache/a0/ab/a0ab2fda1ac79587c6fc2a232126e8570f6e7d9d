@@ -1,0 +1,13 @@
+1539634802a:1:{s:9:"login.htm";a:12:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:228:"title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[Ideas\Shop\Components\Cart Cart]
+[Ideas\Shop\Components\UserExtend UserExtend]
+[RainLab\User\Components\Account Account]
+==
+
+
+{% component 'UserExtend::login' %}
+";s:5:"mtime";i:1535642258;s:6:"markup";s:35:"{% component 'UserExtend::login' %}";s:4:"code";N;s:5:"title";s:5:"Login";s:3:"url";s:6:"/login";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:31:"Ideas\Shop\Components\Cart Cart";a:0:{}s:43:"Ideas\Shop\Components\UserExtend UserExtend";a:0:{}s:39:"RainLab\User\Components\Account Account";a:0:{}}}
